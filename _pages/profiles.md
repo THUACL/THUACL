@@ -4,7 +4,7 @@ permalink: /people/
 title: Team
 description: Members of Automotive Crash Laboratory
 nav: true
-nav_order: 2
+nav_order: 3
 
 profiles:
   - align: right
