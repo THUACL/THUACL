@@ -2,15 +2,14 @@
 layout: about
 title: About
 permalink: /
-subtitle: Tsinghua University · Automotive Crash Laboratory
+subtitle: Tsinghua University · Beijing · China
 
 profile:
   align: right
   image: lab_photo.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>Tsinghua University</p>
-    <p>Beijing, China</p>
+    <p>Automotive Crash Laboratory</p>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: false # includes social icons at the bottom of the page
