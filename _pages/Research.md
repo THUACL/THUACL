@@ -5,7 +5,7 @@ permalink: /Research/
 description: Research directions of Automotive Crash Laboratory (THU).
 nav: true
 nav_order: 1
-display_categories: [research; projects]
+display_categories: [research]
 horizontal: false
 ---
 
