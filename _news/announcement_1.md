@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-ACL课题组网站建立！
+The ACL website has been established!
