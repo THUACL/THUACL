@@ -1,13 +1,25 @@
 ---
 layout: page
 title: Occupant injury risk prediction
-description: a project with a background image and giscus comments
+description: Data-driven crash analysis, occupant injury dataset, and injury prediction algorithm
 img: assets/img/injury risk prediction.jpg
 importance: 1
 category: research
 giscus_comments: true
 ---
 
+Our research focuses on data-driven methods for crash reconstruction, injury prediction, and integrated safety evaluation based on real-world accident data, simulation data, and intelligent vehicle sensing.
+
+### Research topics
+
+- Crash data analysis and reconstruction
+- Occupant and pedestrian injury prediction
+- Safety performance evaluation
+- Data-driven injury modeling
+- Multi-source accident data fusion
+
+
+{% comment %}
 Every project has a beautiful feature showcase page.
 It's easy to include images in a flexible 3-column grid format.
 Make your photos 1/3, 2/3, or full width.
@@ -79,3 +91,4 @@ Here's the code for the last row of images above:
 ```
 
 {% endraw %}
+{% endcomment %}
