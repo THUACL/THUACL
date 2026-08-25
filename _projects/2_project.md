@@ -1,10 +1,10 @@
 ---
 layout: page
-title: project 2
+title: Occupant injury risk prediction
 description: a project with a background image and giscus comments
-img: assets/img/3.jpg
-importance: 2
-category: work
+img: assets/img/injury risk prediction.jpg
+importance: 1
+category: research
 giscus_comments: true
 ---
 
