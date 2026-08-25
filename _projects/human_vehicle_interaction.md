@@ -16,6 +16,7 @@ Our research investigates how drivers understand, interact with, and collaborate
 - Trust and reliance on automated driving
 - Human-centered adaptive safety
 
+@comment{
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
@@ -74,3 +75,4 @@ Here's the code for the last row of images above:
 ```
 
 {% endraw %}
+}
