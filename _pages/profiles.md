@@ -1,7 +1,7 @@
 ---
 layout: profiles
 permalink: /people/
-title: people
+title: Team
 description: Members of Automotive Crash Laboratory
 nav: true
 nav_order: 2
