@@ -32,16 +32,16 @@ The THU Automotive Crash Laboratory conducts research on automotive safety and i
 ## Research areas
 
 ### Injury biomechanics
-Occupant and vulnerable road user injury mechanisms, injury prediction, and protection strategies.
+Occupant and vulnerable road user injury mechanisms, injury risk prediction, and adaptive protection strategies.
 
 ### Pedestrian safety
 Research on pedestrian behavior modeling, interaction risk assessment, safety decisions, and virtual safety evaluation.
 
-### Human-centered intelligent vehicle safety 汽车智能安全
-Research on driver–vehicle interaction, collaborative decision making, and adaptive safety strategies.
+### Intelligent vehicle safety
+Accelerated generation of hazardous scenarios, driving risk assessment, and injury-based safety decision making under safety-critical scenarios.
 
-### Intelligent driving safety
-Risk assessment, safety-critical decision making, and autonomous driving under complex traffic scenarios.
+### Driver–vehicle interaction and value alignment 
+Research on driver–vehicle interaction and behavioral analysis, collaborative decision-making, human-centered adaptive decision-making, and social value alignment.
 
-### Integrated safety
-Integration of pre-crash risk mitigation, crash protection, and injury-aware vehicle decision making.
+### Integrated active and passive safety
+Integration of pre-crash collision risk mitigation, crash protection, injury-aware vehicle decision-making, and restraint system optimization.
