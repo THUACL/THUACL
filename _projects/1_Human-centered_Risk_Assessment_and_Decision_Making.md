@@ -7,9 +7,7 @@ category: research
 giscus_comments: false # 关闭评论
 related_publications: true
 permalink: /projects/human-centered-risk-assessment/
-
-# Optional project-card image. Uncomment after adding the image to assets/img/.
-# img: assets/img/Research_1/human_centered_risk_assessment.jpg
+img: assets/img/Research_1/human_centered_risk_assessment.jpg
 
 # Public resources. Update the empty URLs when datasets/code are released.
 resources:
