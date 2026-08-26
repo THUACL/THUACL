@@ -31,15 +31,16 @@ This research direction is organized around four components:
 
 ## Background
 
-The central idea is to connect the complete chain from **risk emergence to human injury consequence**: When a collision cannot be fully avoided, the system should also estimate and mitigate the potential human consequences of alternative outcomes. This provides a common basis for coordinating **active safety, automated-driving decisions, and occupant protection**.
+The rapid development of intelligent vehicles is reshaping how road safety is assessed and managed. Conventional vehicle safety research has largely treated active safety and passive safety as separate problems which becomes increasingly restrictive in safety-critical scenarios. **A comprehensive safety framework therefore requires intelligent vehicles to understand how the risk develops, how severe the resulting impact may be, and what consequences different outcomes may have for occupants.** Addressing this problem requires linking human risk perception, vehicle interaction dynamics, collision probability and severity, and occupant biomechanics within a unified framework. **Our research investigates this complete pre-crash-to-injury process by combining human behavioral data, physics-informed modeling, driving simulation, injury biomechanics, and data-driven learning.** The objective is to establish a human-centered representation of driving risk that connects traffic-level interactions with vehicle-level collision dynamics and occupant-level injury outcomes, thereby providing a quantitative basis for safety assessment, automated-driving decision support, and the coordinated design of active and passive safety systems.
+
 
 <div class="row justify-content-sm-center">
     <div class="col-sm-10 mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/Research_1/background.jpg" title="Pre-crash-to-injury research framework" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/Research_1/background.jpg" title="Temporal evolution of risk in hazardous scenarios" class="img-fluid rounded z-depth-1" %} # title是鼠标悬停时显示的文字
     </div>
 </div>
 <div class="caption">
-    From risk perception to occupant injury prediction and injury-aware safety decisions.
+    Temporal evolution of risk in hazardous scenarios
 </div>
 
 ---
@@ -68,6 +69,8 @@ S. Gan et al., *Multisource Adaption for Driver Attention Prediction in Arbitrar
 [Paper](https://doi.org/10.1109/TITS.2022.3177640) · [Code & pretrained models]({{ page.resources.ada_code }})
 
 ---
+
+
 
 ## 2. Physics-informed risk assessment
 
