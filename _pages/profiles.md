@@ -12,6 +12,6 @@ profiles:
     content: professor1.md
     image_circular: false
     more_info: >
-      <p>Associate Professor</p>
-      <p>Tsinghua University</p>
+      <p></p>
+      <p></p>
 ---
