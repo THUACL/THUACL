@@ -127,30 +127,8 @@ Importantly, the predicted attention maps can shift toward **latent conflict reg
   >
 
   <img
-    src="{{ '/assets/img/Research_1/paper_gan_2022_6.gif' | relative_url }}"
-    alt="Driver gaze saliency prediction example 2"
-    style="
-      width: 100%;
-      height: auto;
-      display: block;
-      border-radius: 8px;
-    "
-  >
-
-  <img
     src="{{ '/assets/img/Research_1/paper_gan_2022_7.gif' | relative_url }}"
     alt="Driver gaze saliency prediction example 3"
-    style="
-      width: 100%;
-      height: auto;
-      display: block;
-      border-radius: 8px;
-    "
-  >
-
-  <img
-    src="{{ '/assets/img/Research_1/paper_gan_2022_8.gif' | relative_url }}"
-    alt="Driver gaze saliency prediction example 4"
     style="
       width: 100%;
       height: auto;
