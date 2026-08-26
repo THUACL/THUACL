@@ -6,9 +6,7 @@ importance: 1
 category: research
 giscus_comments: false # 关闭评论
 related_publications: true
-
-# Optional project-card image. Uncomment after adding the image to assets/img/.
-# img: assets/img/Research_1/human_centered_risk_assessment.jpg
+img: assets/img/Research_1/human_centered_risk_assessment.jpg
 
 # Public resources. Update the empty URLs when datasets/code are released.
 resources:
@@ -37,6 +35,15 @@ This research direction is organized around four components:
 
 The central idea is to connect the complete chain from **risk emergence to human injury consequence**:
 When a collision cannot be fully avoided, the system should also estimate and mitigate the potential human consequences of alternative outcomes. This provides a common basis for coordinating **active safety, automated-driving decisions, and occupant protection**.
+
+<div class="row justify-content-sm-center">
+    <div class="col-sm-10 mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/Research_1/background.jpg" title="Pre-crash-to-injury research framework" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Overall research framework: from risk perception and physics-informed risk assessment to occupant injury prediction and injury-aware safety decisions.
+</div>
 
 ---
 
@@ -338,41 +345,6 @@ where $a$ denotes a candidate evasive or protective action and $C_{crash}$ denot
 
 This formulation provides a basis for selecting actions that consider not only **whether a collision can be avoided**, but also **how severe the resulting human injury may be when complete avoidance is infeasible**.
 
----
-
-## Ongoing and future directions
-
-The following directions extend the published work above and represent continuing research rather than completed claims.
-
-### Pre-crash-to-injury integrated safety
-
-We aim to connect active safety and passive safety within a common decision framework. Instead of evaluating collision avoidance and occupant protection independently, candidate maneuvers can be evaluated through their downstream collision conditions and predicted biomechanical consequences.
-
-### Human-informed risk representation
-
-Driver attention, hazard perception, and evasive behavior can provide behavioral priors for intelligent risk models. Future work will investigate whether human gaze and decision patterns can be used as supervision, regularization, or interpretability references for automated-driving risk assessment.
-
-### Personalized injury-aware safety
-
-Occupant injury depends on more than collision severity. Occupant body size, posture, restraint state, and protection-system configuration can substantially change the resulting biomechanical response. We are extending injury prediction toward **occupant-specific risk estimation and personalized protection**.
-
-### Uncertainty-aware safety decision making
-
-Safety-critical systems require not only point predictions but also reliable estimates of predictive uncertainty. Future risk and injury models should distinguish between **low predicted risk** and **high model uncertainty**, allowing conservative intervention when the model operates outside well-supported regions of the data distribution.
-
-### Human-centered automotive safety benchmark
-
-By organizing driver-attention data, safety-critical interaction data, collision-condition data, multi-fidelity crash simulations, and occupant-injury information under consistent interfaces, we aim to establish an open benchmark for research on:
-
-1. driver attention prediction,
-2. collision probability prediction,
-3. collision severity prediction,
-4. occupant injury prediction,
-5. multi-fidelity injury learning,
-6. automated-driving safety evaluation, and
-7. injury-aware decision making.
-
----
 
 ## Open data & code
 
@@ -388,7 +360,7 @@ Reproducibility and open research are integral parts of this research program. P
 
 ---
 
-## Selected publications
+## References
 
 1. **Gan, S., Pei, X., Ge, Y., et al.** (2022). Multisource Adaption for Driver Attention Prediction in Arbitrary Driving Scenes. *IEEE Transactions on Intelligent Transportation Systems, 23*(11), 20912–20925. https://doi.org/10.1109/TITS.2022.3177640
 2. **Wang, Q., Gan, S., Chen, W., Li, Q., & Nie, B.** (2021). A data-driven, kinematic feature-based, near real-time algorithm for injury severity prediction of vehicle occupants. *Accident Analysis & Prevention, 156*, 106149. https://doi.org/10.1016/j.aap.2021.106149
