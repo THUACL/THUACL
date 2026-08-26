@@ -1,26 +1,24 @@
 ---
 layout: page
 title: Human-centered Risk Assessment & Decision Making
-description: From human-like risk perception to physics-informed risk assessment, occupant injury prediction, and injury-aware safety decisions.
+description: We develop human-centered methods that integrate risk perception, physics-informed risk assessment, occupant injury prediction, and injury-aware decision making, bridging pre-crash collision avoidance with in-crash injury mitigation to support safer and more integrated intelligent vehicle systems.
 importance: 1
 category: research
 giscus_comments: false # 关闭评论
 related_publications: true
-img: assets/img/Research_1/human_centered_risk_assessment.jpg
+img: assets/img/Research_1/injury risk prediction.jpg
 
 # Public resources. Update the empty URLs when datasets/code are released.
 resources:
   ada_code: "https://github.com/ShunGan/ADA"
   vehicle_crash_database: "https://github.com/wangqf1997/Vehicle-Crash-Database"
-  piram_dataset: ""
   piram_code: ""
-  mfpgrnet_dataset: ""
+  piram_dataset: ""
   mfpgrnet_code: ""
-  unified_safety_dataset: ""
-  unified_safety_code: ""
+  mfpgrnet_dataset: ""
 ---
 
-> **Research objective.** We develop human-centered methods for understanding, predicting, and mitigating risk in safety-critical driving scenarios. Our research connects **human risk perception, traffic interaction, collision likelihood, occupant injury severity, and safety decision making** within a unified pre-crash-to-injury framework.
+> **Research objective.** We develop human-centered methods for understanding, predicting, and mitigating risk in safety-critical driving scenarios. Our research connects **human risk perception, driving risk evaluation, collision likelihood assessment, occupant injury severity prediction, and Injury-aware decision making** within a unified **pre-crash-to-injury** framework.
 
 This research direction is organized around four components:
 
@@ -42,7 +40,7 @@ When a collision cannot be fully avoided, the system should also estimate and mi
     </div>
 </div>
 <div class="caption">
-    Overall research framework: from risk perception and physics-informed risk assessment to occupant injury prediction and injury-aware safety decisions.
+    From risk perception to occupant injury prediction and injury-aware safety decisions.
 </div>
 
 ---
