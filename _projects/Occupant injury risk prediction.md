@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Human-centered Risk Assessment & Decision Making
-description: This study comprises three integrated components: physics-informed risk assessment, injury risk prediction, and safety-critical, injury-aware decision-making.
+description: "This study comprises three integrated components: physics-informed risk assessment, injury risk prediction, and safety-critical, injury-aware decision-making."
 img: assets/img/injury risk prediction.jpg
 importance: 1
 category: research
