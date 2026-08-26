@@ -115,57 +115,49 @@ Importantly, the predicted attention maps can shift toward **latent conflict reg
   margin: 24px auto 0 auto;
 ">
 
-  <video
-    controls
-    autoplay
-    muted
-    loop
-    playsinline
-    preload="metadata"
-    style="width: 100%; height: auto; display: block; border-radius: 8px;"
+  <img
+    src="{{ '/assets/img/Research_1/paper_gan_2022_5.gif' | relative_url }}"
+    alt="Driver gaze saliency prediction example 1"
+    style="
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+    "
   >
-    <source src="{{ '/assets/img/Research_1/paper_gan_2022_5.mp4' | relative_url }}" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
 
-  <video
-    controls
-    autoplay
-    muted
-    loop
-    playsinline
-    preload="metadata"
-    style="width: 100%; height: auto; display: block; border-radius: 8px;"
+  <img
+    src="{{ '/assets/img/Research_1/paper_gan_2022_6.gif' | relative_url }}"
+    alt="Driver gaze saliency prediction example 2"
+    style="
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+    "
   >
-    <source src="{{ '/assets/img/Research_1/paper_gan_2022_6.mp4' | relative_url }}" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
 
-  <video
-    controls
-    autoplay
-    muted
-    loop
-    playsinline
-    preload="metadata"
-    style="width: 100%; height: auto; display: block; border-radius: 8px;"
+  <img
+    src="{{ '/assets/img/Research_1/paper_gan_2022_7.gif' | relative_url }}"
+    alt="Driver gaze saliency prediction example 3"
+    style="
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+    "
   >
-    <source src="{{ '/assets/img/Research_1/paper_gan_2022_7.mp4' | relative_url }}" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
 
-  <video
-    controls
-    autoplay
-    muted
-    loop
-    playsinline
-    preload="metadata"
-    style="width: 100%; height: auto; display: block; border-radius: 8px;"
+  <img
+    src="{{ '/assets/img/Research_1/paper_gan_2022_8.gif' | relative_url }}"
+    alt="Driver gaze saliency prediction example 4"
+    style="
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+    "
   >
-    <source src="{{ '/assets/img/Research_1/paper_gan_2022_8.mp4' | relative_url }}" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
 
 </div>
 
