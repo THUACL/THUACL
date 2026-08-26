@@ -155,21 +155,36 @@ Importantly, the predicted attention maps can shift toward **latent conflict reg
 
 Conventional surrogate safety indicators often characterize only one dimension of a hazardous interaction. For example, time-to-collision can indicate temporal urgency in longitudinal conflicts but may be less informative for complex lateral interactions. More importantly, two situations with similar collision probability can lead to substantially different collision consequences.
 
+<div class="row justify-content-sm-center">
+    <div class="col-sm-10 mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/Research_1/paper_lu_2025_2.png" title="Quantification of integrated driving risk" class="img-fluid rounded z-depth-1" %} 
+    </div>
+</div>
+<div class="caption">
+    Quantification of integrated driving risk
+</div>
+
+
 We therefore define driving risk by jointly considering **the probability of collision and the potential severity of the collision**:
 
 $$
 \mathrm{Risk} = \mathrm{Collision\ Probability} \times \mathrm{Collision\ Severity}.
 $$
 
-To operationalize this concept, we developed a **Physics-Informed Integrated Risk Assessment Model (PIRAM)**. PIRAM predicts collision time and collision velocity from vehicle-interaction histories and map information, then transforms these predictions into collision probability and collision severity and combines them into an **Integrated Driving Risk (IDR)** metric:
+To operationalize this concept, we developed a **Physics-Informed Integrated Risk Assessment Model (PIRAM)**. PIRAM predicts collision time and collision velocity from vehicle-interaction histories and map information, then transforms these predictions into collision probability and collision severity and combines them into an **Integrated Driving Risk (IDR)** metric.
 
-$$
-IDR = R_p \times R_s,
-$$
 
-where $R_p$ represents collision probability and $R_s$ represents collision severity.
 
-### Physics-informed learning
+### Physics-informed risk assessment
+
+<div class="row justify-content-sm-center">
+    <div class="col-sm-10 mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/Research_1/paper_lu_2025_1.jpg" title="Overall architecture of the PNN in physics-informed integrated risk assessment model" class="img-fluid rounded z-depth-1" %} 
+    </div>
+</div>
+<div class="caption">
+    Overall architecture of the PNN in physics-informed integrated risk assessment model
+</div>
 
 PIRAM combines a data-driven neural network with a physics-based prediction model:
 
@@ -181,6 +196,15 @@ PIRAM combines a data-driven neural network with a physics-based prediction mode
 This hybrid design is intended to preserve the representation capability of data-driven models while improving **prediction stability, physical consistency, and reliability** in safety-critical conditions.
 
 ### Integrated Driving Risk Prediction Dataset (IDRPD)
+
+<div class="row justify-content-sm-center">
+    <div class="col-sm-10 mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/Research_1/paper_lu_2025_3.png" title="Establishment of the integrated driving risk prediction dataset" class="img-fluid rounded z-depth-1" %} 
+    </div>
+</div>
+<div class="caption">
+    Establishment of the integrated driving risk prediction dataset
+</div>
 
 To support this work, we constructed the **Integrated Driving Risk Prediction Dataset (IDRPD)** from driver-in-the-loop experiments in a high-fidelity driving simulator. The dataset contains **1,879 safety-critical interaction events** involving:
 
@@ -198,12 +222,44 @@ Data were recorded at 20 Hz around the hazard-triggering event. A sliding-time-w
 
 Compared with baseline physics-based and data-driven approaches, PIRAM improved the prediction of both collision probability and collision severity. The study reported improvements in prediction accuracy of approximately **7.9% for collision probability** and **3.2% for collision severity**, together with improved temporal stability. Case studies further showed that the model can identify the escalation of integrated driving risk earlier than conventional approaches, providing additional time for safety intervention and occupant-protection strategies.
 
-**Research focus:** physics-informed learning · collision probability · collision severity · dynamic risk evolution · active-passive safety integration
+<div style="
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 24px auto 0 auto;
+">
 
-**Representative publication**  
-T. Lu et al., *A physics-informed attention model for integrated driving risk assessment*, Accident Analysis & Prevention, 2025.  
+  <div style="text-align: center;">
+    {% include figure.liquid
+      loading="eager"
+      path="assets/img/Research_1/paper_lu_2025_5.png"
+      title="Integrated driving risk prediction performance of each model in the emergency avoidance scenario from driving simulator"
+      class="img-fluid rounded z-depth-1"
+    %}
+
+    <div class="caption" style="text-align: center; margin-top: 8px;">
+      Integrated driving risk prediction performance of each model in the emergency avoidance scenario from driving simulator
+    </div>
+  </div>
+
+  <div style="text-align: center;">
+    {% include figure.liquid
+      loading="eager"
+      path="assets/img/Research_1/paper_lu_2025_4.png"
+      title="Integrated driving risk prediction performance of each model in a real collision case"
+      class="img-fluid rounded z-depth-1"
+    %}
+
+    <div class="caption" style="text-align: center; margin-top: 8px;">
+      Integrated driving risk prediction performance of each model in a real collision case
+    </div>
+  </div>
+
+</div>
+
 [Paper](https://doi.org/10.1016/j.aap.2025.108266)
-
 {% if page.resources.piram_dataset != "" or page.resources.piram_code != "" %}
 **Open resources:**
 {% if page.resources.piram_dataset != "" %}[Dataset]({{ page.resources.piram_dataset }}){% endif %}
