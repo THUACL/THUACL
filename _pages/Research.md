@@ -2,7 +2,7 @@
 layout: page
 title: Research
 permalink: /Research/
-description: Research directions of Automotive Crash Laboratory (THU).
+description: Research directions of ACL.
 nav: true
 nav_order: 1
 display_categories: [research]
