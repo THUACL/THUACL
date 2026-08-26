@@ -49,24 +49,85 @@ The rapid development of intelligent vehicles is reshaping how road safety is as
 
 ### Adaptive driver attention prediction across heterogeneous driving scenes
 
-Human drivers do not process all visual information equally. Their attention is selectively allocated to traffic elements that are relevant to the current driving task, including potential hazards and interacting road users. Understanding this process provides an important behavioral basis for human-centered intelligent driving systems.
+Human drivers do not process all visual information equally. Their attention is selectively allocated to traffic elements that are relevant to the current driving task, including interacting road users and potential hazards. Understanding this process provides an important behavioral basis for human-centered intelligent driving systems.
+
+<div class="row justify-content-sm-center">
+    <div class="col-sm-10 mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/Research_1/paper_gan_2022_1.jpg" title="Illustration of adaptive driver attention prediction in different driving scenes collected from multiple datasets" class="img-fluid rounded z-depth-1" %} 
+    </div>
+</div>
+<div class="caption">
+    Illustration of adaptive driver attention prediction in different driving scenes collected from multiple datasets
+</div>
 
 We developed an **Adaptive Driver Attention (ADA)** model to predict driver visual attention across heterogeneous driving environments. The model is inspired by the two principal mechanisms of human visual attention:
 
 - **Bottom-up attention**, in which salient visual stimuli attract attention automatically.
 - **Top-down attention**, in which drivers adjust perceptual priorities according to the current driving task and traffic context.
 
+<div class="row justify-content-sm-center">
+    <div class="col-sm-10 mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/Research_1/paper_gan_2022.jpg" title="Overview of Adaptive Driver Attention" class="img-fluid rounded z-depth-1" %} 
+    </div>
+</div>
+<div class="caption">
+    Overview of Adaptive Driver Attention. The gray blocks refer to generic modules for all datasets; the gray blocks with red border lines depict that the domain-specific batch normalization was embedded into the generic module; the colored blocks refer to adaptive modules for specific datasets
+</div>
+
 The ADA framework combines generic feature encoders with scene-adaptive attention modules to reproduce human-like perceptual patterns while addressing substantial domain shifts among driver-attention datasets. The model incorporates **domain-specific batch normalization, Gaussian priors, smoothing filters, spatial attention, channel attention, and domain-specific focal loss** to mitigate heterogeneity arising from different video sources, gaze-collection protocols, scene distributions, and saliency-map generation procedures.
+
+<div class="row justify-content-sm-center">
+    <div class="col-sm-10 mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/Research_1/paper_gan_2022_2.jpg" title="Qualitative evaluation on four driver attention datasets" class="img-fluid rounded z-depth-1" %} 
+    </div>
+</div>
+<div class="caption">
+    Qualitative evaluation on four driver attention datasets
+</div>
 
 The model was jointly trained on four public driver-attention datasets — **BDD-A, DADA-2000, DReyeVE, and EyeTrack** — and further evaluated on **PSAD**, which was not used for joint training. The results show that the model can generalize across heterogeneous traffic scenes and reproduce characteristic human attention patterns in cruising, turning, conflict, and accident-related situations.
 
+<div class="row justify-content-sm-center">
+    <div class="col-sm-10 mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/Research_1/paper_gan_2022_3.jpg" title="Performance comparision on EyeTrack and DADA-2000" class="img-fluid rounded z-depth-1" %} 
+    </div>
+</div>
+<div class="caption">
+</div>
+
+<div class="row justify-content-sm-center">
+    <div class="col-sm-10 mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/Research_1/paper_gan_2022_4.jpg" title="Performance comparision on BDD-A, DReyeVE and PSAD" class="img-fluid rounded z-depth-1" %} 
+    </div>
+</div>
+<div class="caption">
+    Performance comparision on four public driver-attention datasets (using saliency evaluation metrics. Symbol ↑ expects a large value and ↓ expects a smaller value)
+</div>
+
 Importantly, the predicted attention maps can shift toward **latent conflict regions and relevant interacting vehicles**, providing a basis for identifying where human drivers are likely to allocate attention before and during safety-critical events.
 
-**Research focus:** driver attention prediction · human-like perception · latent hazard identification · multi-source domain adaptation
+<div class="row mt-3">
+    <div class="col-sm-6 mt-3 mt-md-0">
+        {% include video.liquid path="assets/img/Research_1/paper_gan_2022_5.mp4" class="img-fluid rounded z-depth-1" controls=true autoplay=true muted=true loop=true %}
+    </div>
+    <div class="col-sm-6 mt-3 mt-md-0">
+        {% include video.liquid path="assets/img/Research_1/paper_gan_2022_6.mp4" class="img-fluid rounded z-depth-1" controls=true autoplay=true muted=true loop=true %}
+    </div>
+</div>
+<div class="row mt-3">
+    <div class="col-sm-6 mt-3 mt-md-0">
+        {% include video.liquid path="assets/img/Research_1/paper_gan_2022_7.mp4" class="img-fluid rounded z-depth-1" controls=true autoplay=true muted=true loop=true %}
+    </div>
+    <div class="col-sm-6 mt-3 mt-md-0">
+        {% include video.liquid path="assets/img/Research_1/paper_gan_2022_8.mp4" class="img-fluid rounded z-depth-1" controls=true autoplay=true muted=true loop=true %}
+    </div>
+</div>
+<div class="caption">
+    Driver gaze saliency based on model prediction
+</div>
 
-**Representative publication**  
-S. Gan et al., *Multisource Adaption for Driver Attention Prediction in Arbitrary Driving Scenes*, IEEE Transactions on Intelligent Transportation Systems, 2022.  
-[Paper](https://doi.org/10.1109/TITS.2022.3177640) · [Code & pretrained models]({{ page.resources.ada_code }})
+
+[Paper](https://doi.org/10.1109/TITS.2022.3177640) · [Code]({{ page.resources.ada_code }})
 
 ---
 
