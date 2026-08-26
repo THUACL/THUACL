@@ -2,7 +2,7 @@
 layout: page
 title: Human–vehicle interaction
 description: Human-centered interaction and collaborative decision making
-img: assets/img/research_hvi.jpg
+img: assets/img/Research_2/research_hvi.jpg
 importance: 2
 category: research
 ---
