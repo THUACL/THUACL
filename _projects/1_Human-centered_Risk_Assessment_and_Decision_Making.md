@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Human-centered Risk Assessment & Decision Making
-description: We develop human-centered methods that integrate risk perception, physics-informed risk assessment, occupant injury prediction, and injury-aware decision making, bridging pre-crash collision avoidance with in-crash injury mitigation to support safer and more integrated intelligent vehicle systems.
+description: This page presents our group's work on full-process risk quantification and safety decision-making in hazardous scenarios, with partial datasets and code released to facilitate further research in the community.
 importance: 1
 category: research
 giscus_comments: false # 关闭评论
@@ -18,7 +18,7 @@ resources:
   mfpgrnet_dataset: ""
 ---
 
-> **Research objective.** We develop human-centered methods for understanding, predicting, and mitigating risk in safety-critical driving scenarios. Our research connects **human risk perception, driving risk evaluation, collision likelihood assessment, occupant injury severity prediction, and Injury-aware decision making** within a unified **pre-crash-to-injury** framework.
+> **Research objective.** We develop human-centered methods that integrate **risk perception, physics-informed risk assessment, occupant injury prediction, and injury-aware decision making**, bridging pre-crash collision avoidance with in-crash injury mitigation to support safer and more integrated intelligent vehicle systems. 
 
 This research direction is organized around four components:
 
@@ -29,10 +29,9 @@ This research direction is organized around four components:
 
 ---
 
-## Research framework
+## Background
 
-The central idea is to connect the complete chain from **risk emergence to human injury consequence**:
-When a collision cannot be fully avoided, the system should also estimate and mitigate the potential human consequences of alternative outcomes. This provides a common basis for coordinating **active safety, automated-driving decisions, and occupant protection**.
+The central idea is to connect the complete chain from **risk emergence to human injury consequence**: When a collision cannot be fully avoided, the system should also estimate and mitigate the potential human consequences of alternative outcomes. This provides a common basis for coordinating **active safety, automated-driving decisions, and occupant protection**.
 
 <div class="row justify-content-sm-center">
     <div class="col-sm-10 mt-3 mt-md-0">
