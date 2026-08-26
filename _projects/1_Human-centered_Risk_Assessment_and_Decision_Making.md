@@ -106,26 +106,72 @@ The model was jointly trained on four public driver-attention datasets — **BDD
 
 Importantly, the predicted attention maps can shift toward **latent conflict regions and relevant interacting vehicles**, providing a basis for identifying where human drivers are likely to allocate attention before and during safety-critical events.
 
-<div class="row mt-3">
-    <div class="col-sm-6 mt-3 mt-md-0">
-        {% include video.liquid path="assets/img/Research_1/paper_gan_2022_5.mp4" class="img-fluid rounded z-depth-1" controls=true autoplay=true muted=true loop=true %}
-    </div>
-    <div class="col-sm-6 mt-3 mt-md-0">
-        {% include video.liquid path="assets/img/Research_1/paper_gan_2022_6.mp4" class="img-fluid rounded z-depth-1" controls=true autoplay=true muted=true loop=true %}
-    </div>
-</div>
-<div class="row mt-3">
-    <div class="col-sm-6 mt-3 mt-md-0">
-        {% include video.liquid path="assets/img/Research_1/paper_gan_2022_7.mp4" class="img-fluid rounded z-depth-1" controls=true autoplay=true muted=true loop=true %}
-    </div>
-    <div class="col-sm-6 mt-3 mt-md-0">
-        {% include video.liquid path="assets/img/Research_1/paper_gan_2022_8.mp4" class="img-fluid rounded z-depth-1" controls=true autoplay=true muted=true loop=true %}
-    </div>
-</div>
-<div class="caption">
-    Driver gaze saliency based on model prediction
+<div style="
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  width: 100%;
+  max-width: 900px;
+  margin: 24px auto 0 auto;
+">
+
+  <video
+    controls
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="metadata"
+    style="width: 100%; height: auto; display: block; border-radius: 8px;"
+  >
+    <source src="{{ '/assets/img/Research_1/paper_gan_2022_5.mp4' | relative_url }}" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <video
+    controls
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="metadata"
+    style="width: 100%; height: auto; display: block; border-radius: 8px;"
+  >
+    <source src="{{ '/assets/img/Research_1/paper_gan_2022_6.mp4' | relative_url }}" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <video
+    controls
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="metadata"
+    style="width: 100%; height: auto; display: block; border-radius: 8px;"
+  >
+    <source src="{{ '/assets/img/Research_1/paper_gan_2022_7.mp4' | relative_url }}" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <video
+    controls
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="metadata"
+    style="width: 100%; height: auto; display: block; border-radius: 8px;"
+  >
+    <source src="{{ '/assets/img/Research_1/paper_gan_2022_8.mp4' | relative_url }}" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
 </div>
 
+<div class="caption" style="text-align: center; margin-top: 12px;">
+  Driver gaze saliency based on model prediction
+</div>
 
 [Paper](https://doi.org/10.1109/TITS.2022.3177640) · [Code]({{ page.resources.ada_code }})
 
