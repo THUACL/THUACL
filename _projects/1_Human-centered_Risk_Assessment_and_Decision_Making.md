@@ -19,8 +19,6 @@ resources:
   piram_code: ""
   mfpgrnet_dataset: ""
   mfpgrnet_code: ""
-  unified_safety_dataset: ""
-  unified_safety_code: ""
 ---
 
 > **Research objective.** We develop human-centered methods for understanding, predicting, and mitigating risk in safety-critical driving scenarios. Rather than defining vehicle safety solely by whether a collision occurs, our research connects **human risk perception, traffic interaction, collision likelihood, impact severity, occupant injury, and safety decision making** within a unified pre-crash-to-injury framework.
