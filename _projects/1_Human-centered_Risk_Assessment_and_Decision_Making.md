@@ -6,8 +6,9 @@ importance: 1
 category: research
 giscus_comments: false # 关闭评论
 related_publications: true
-permalink: /projects/human-centered-risk-assessment/
-img: assets/img/Research_1/human_centered_risk_assessment.jpg
+
+# Optional project-card image. Uncomment after adding the image to assets/img/.
+# img: assets/img/Research_1/human_centered_risk_assessment.jpg
 
 # Public resources. Update the empty URLs when datasets/code are released.
 resources:
@@ -17,44 +18,25 @@ resources:
   piram_code: ""
   mfpgrnet_dataset: ""
   mfpgrnet_code: ""
+  unified_safety_dataset: ""
+  unified_safety_code: ""
 ---
 
-> **Research objective.** We develop human-centered methods for understanding, predicting, and mitigating risk in safety-critical driving scenarios. Rather than defining vehicle safety solely by whether a collision occurs, our research connects **human risk perception, traffic interaction, collision likelihood, impact severity, occupant injury, and safety decision making** within a unified pre-crash-to-injury framework.
+> **Research objective.** We develop human-centered methods for understanding, predicting, and mitigating risk in safety-critical driving scenarios. Our research connects **human risk perception, traffic interaction, collision likelihood, occupant injury severity, and safety decision making** within a unified pre-crash-to-injury framework.
 
-Our work combines **human behavioral data, vehicle dynamics, injury biomechanics, driving simulation, and data-driven modeling** to study safety across three coupled scales:
-
-**Traffic-level interaction** → **vehicle-level collision** → **occupant-level injury**
-
-This research direction is organized around four closely connected components:
+This research direction is organized around four components:
 
 1. **Human-centered risk perception** — understanding what human drivers attend to and how latent hazards are perceived.
 2. **Physics-informed risk assessment** — jointly quantifying collision probability and collision severity under dynamic traffic interactions.
 3. **Occupant injury risk prediction** — predicting biomechanical consequences efficiently across different levels of model fidelity.
-4. **Safety-critical and injury-aware decision support** — integrating collision occurrence and occupant injury into a unified safety evaluation framework and providing the basis for injury-aware automated-driving decisions.
+4. **Injury-aware decision making** — integrating collision occurrence and occupant injury into a unified safety evaluation framework and providing the basis for injury-aware automated-driving decisions.
 
 ---
 
 ## Research framework
 
-The central idea is to move beyond collision-only safety assessment and connect the complete chain from **risk emergence to human injury consequence**:
-
-```text
-Human & traffic environment
-        ↓
-Human-like risk perception
-        ↓
-Physics-informed driving risk assessment
-        ↓
-Collision probability & collision severity
-        ↓
-Occupant injury prediction
-        ↓
-Unified safety evaluation
-        ↓
-Injury-aware decision support & integrated safety
-```
-
-In this framework, collision avoidance remains the primary objective. When a collision cannot be fully avoided, the system should also estimate and mitigate the potential human consequences of alternative outcomes. This provides a common basis for coordinating **active safety, automated-driving decisions, and occupant protection**.
+The central idea is to connect the complete chain from **risk emergence to human injury consequence**:
+When a collision cannot be fully avoided, the system should also estimate and mitigate the potential human consequences of alternative outcomes. This provides a common basis for coordinating **active safety, automated-driving decisions, and occupant protection**.
 
 ---
 
@@ -403,19 +385,6 @@ Reproducibility and open research are integral parts of this research program. P
 | Near-real-time Occupant Injury Prediction | [Paper](https://doi.org/10.1016/j.aap.2021.106149) | [Vehicle-crash database]({{ page.resources.vehicle_crash_database }}) | Database repository | Available |
 | Multi-fidelity Occupant Injury Prediction (MF-PGRNet) | [Paper](https://doi.org/10.1016/j.aei.2026.105117) | {% if page.resources.mfpgrnet_dataset != "" %}[Dataset]({{ page.resources.mfpgrnet_dataset }}){% else %}Coming soon{% endif %} | {% if page.resources.mfpgrnet_code != "" %}[Code]({{ page.resources.mfpgrnet_code }}){% else %}Coming soon{% endif %} | Preparing release |
 | Unified Safety Evaluation across Automation Levels | [Paper](https://doi.org/10.1016/j.aap.2025.108273) | {% if page.resources.unified_safety_dataset != "" %}[Dataset]({{ page.resources.unified_safety_dataset }}){% else %}Coming soon{% endif %} | {% if page.resources.unified_safety_code != "" %}[Evaluation code]({{ page.resources.unified_safety_code }}){% else %}Coming soon{% endif %} | Preparing release |
-
-### Recommended contents for each public release
-
-To facilitate reuse and reproducibility, each released resource will ideally include:
-
-- **Dataset** — processed data, metadata, version number, and data-use license;
-- **Data dictionary** — variable definitions, units, coordinate systems, and sampling frequencies;
-- **Code** — preprocessing, training, inference, and evaluation scripts;
-- **Model weights** — pretrained checkpoints where applicable;
-- **Benchmark split** — fixed training, validation, and test partitions;
-- **Reproduction example** — a minimal example reproducing representative results;
-- **Citation information** — DOI, BibTeX, and recommended citation format; and
-- **Changelog** — version history and revisions to released data or code.
 
 ---
 
