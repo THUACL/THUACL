@@ -27,7 +27,7 @@ latest_posts:
 
 ## About us
 
-The THU Automotive Crash Laboratory conducts research on automotive safety and intelligent vehicles, with a focus on human-centered safety, human–vehicle interaction, intelligent decision making, injury biomechanics, and integrated active–passive safety.
+The Automotive Crash Laboratory conducts interdisciplinary research on vehicle safety, with a focus on understanding, evaluating, and mitigating injury risks across the full crash process. Its research spans injury biomechanics, pedestrian safety, intelligent vehicle safety, driver–vehicle interaction and value alignment, and integrated active and passive safety.
 
 ## Research areas
 
