@@ -5,7 +5,7 @@ description: This page presents our group's work on full-process risk quantifica
 importance: 1
 category: research
 giscus_comments: false # 关闭评论
-related_publications: true
+related_publications: false # 关闭引用文献区块
 img: assets/img/Research_1/injury risk prediction.jpg
 
 # Public resources. Update the empty URLs when datasets/code are released.
@@ -208,13 +208,9 @@ This hybrid design is intended to preserve the representation capability of data
 
 To support this work, we constructed the **Integrated Driving Risk Prediction Dataset (IDRPD)** from driver-in-the-loop experiments in a high-fidelity driving simulator. The dataset contains **1,879 safety-critical interaction events** involving:
 
-- cut-in conflicts,
-- merging conflicts,
-- emergency-braking conflicts,
-- driver collision-avoidance maneuvers,
-- non-collision and collision outcomes,
-- collision timing, and
-- collision velocity.
+- cut-in conflicts, merging conflicts, emergency-braking conflicts
+- driver collision-avoidance maneuvers, non-collision and collision outcomes
+- collision timing and collision conditions
 
 Data were recorded at 20 Hz around the hazard-triggering event. A sliding-time-window augmentation strategy was further used to represent the temporal evolution from normal driving to escalating risk and eventual collision or successful avoidance.
 
@@ -240,7 +236,7 @@ Compared with baseline physics-based and data-driven approaches, PIRAM improved 
     %}
 
     <div class="caption" style="text-align: center; margin-top: 8px;">
-      Integrated driving risk prediction performance of each model in the emergency avoidance scenario from driving simulator
+      Performance comparision in the emergency avoidance scenario from driving simulator
     </div>
   </div>
 
@@ -253,7 +249,7 @@ Compared with baseline physics-based and data-driven approaches, PIRAM improved 
     %}
 
     <div class="caption" style="text-align: center; margin-top: 8px;">
-      Integrated driving risk prediction performance of each model in a real collision case
+      Performance comparision in a real collision case
     </div>
   </div>
 
@@ -271,13 +267,21 @@ Compared with baseline physics-based and data-driven approaches, PIRAM improved 
 
 ---
 
-## 3. Occupant injury risk prediction
+## 3. Occupant injury severity prediction
 
-Avoiding collisions remains the primary goal of vehicle safety systems, but residual and unavoidable collisions cannot be eliminated completely. In these conditions, intelligent vehicles require the ability to estimate potential occupant injury rapidly and reliably.
+乘员损伤预测模型可以为碰撞前阶段的轨迹规划系统和in-crash 阶段的乘员约束系统优化提供重要参考。为了解决上述问题，我们首先构建了一个大规模正面碰撞工况数据集，重点研究车内乘员的运动学响应特性。进一步，我们建立了一个数据驱动的、基于车辆动力学参数的乘员损伤预测模型以实现准确且快速的乘员损伤严重程度评估。我们将上述问题分为两个阶段：（1）基于深度学习算法在7分类任务中实现高准确率的乘员损伤预测；（2）通过模型可视化方法提取碰撞过程中简化的动力学特征以建立一个凭借较少计算资源就能实现准确预测的near-real time 损伤预测模型。
 
-Our research connects **vehicle-level crash dynamics** with **occupant-level biomechanical outcomes**, with particular emphasis on computational efficiency, data scarcity, model fidelity, and engineering applicability.
+<div class="row justify-content-sm-center">
+    <div class="col-sm-10 mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/Research_1/paper_wang_2021_1.png" title="Technical framework of near real-time occupant injury prediction" class="img-fluid rounded z-depth-1" %} 
+    </div>
+</div>
+<div class="caption">
+    Technical framework of near real-time occupant injury prediction
+</div>
 
-### 3.1 Near-real-time occupant injury prediction
+
+### 3.1 Near-real-time occupant injury severity prediction
 
 We developed a data-driven framework for predicting occupant injury severity from vehicle crash information in near real time.
 
@@ -369,7 +373,7 @@ T. Lu et al., *A knowledge-guided multi-fidelity residual learning framework for
 
 ---
 
-## 4. Safety-critical and injury-aware decision support
+## 4. Injury-aware decision making in safety-critical scenario
 
 ### From collision avoidance to unified safety evaluation
 
