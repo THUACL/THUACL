@@ -436,7 +436,7 @@ The framework uses a high-fidelity driving simulator and parameterized hazard-tr
 Vehicle safety is often assessed primarily by crash rate. These indicators are necessary but incomplete: they do not describe the consequences for vehicle occupants when collision avoidance fails. We therefore developed a metric (**unified safety benefit**) that evaluates automated-driving safety through both **collision occurrence and occupant injury severity** under comparable safety-critical scenarios.
 
 
-Vehicles representing **attentive manual driving (L0 reference), SAE Level 2, Level 3, and Level 4 automation** were evaluated under comparable road scenarios, similar urgency levels, and consistent metrics. Under the designed safety-critical scenarios, the study reported:
+Vehicles representing **attentive manual driving (SAE Level 0), SAE Level 2, Level 3, and Level 4 automation** were evaluated under comparable road scenarios, similar urgency levels, and consistent metrics. Under the designed safety-critical scenarios, the study reported:
 
 | Automation level | Collision rate | Probability of severe occupant injury | Unified safety benefit
 | --- | ---: | ---: | ---: |
