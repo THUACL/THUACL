@@ -443,7 +443,7 @@ Vehicles representing **attentive manual driving (L0 reference), SAE Level 2, Le
 | Attentive manual driving | 12.6% | 8.6% | 94.0% |
 | Level 2 | 24.3% | 11.1% | 90.0% |
 | Level 3 | 21.4% | 21.6% | 89.0% |
-| Level 4 | 14.1% | 9.2% | 95.0 |
+| Level 4 | 14.1% | 9.2% | 95.0% |
 
 The results show that **a lower collision rate does not necessarily translate directly into a proportionally higher overall safety benefit**. In the experiment, Level 3 automation reduced collision occurrence relative to Level 2 but exhibited higher injury severity when collisions occurred, resulting in comparable unified safety benefits. Level 4 achieved a higher overall safety benefit primarily through a lower collision rate, while the reduction in residual-collision injury severity was more limited. Therefore, collision avoidance is necessary, but collision avoidance alone is not sufficient to characterize the safety performance of an automated vehicle.
 
