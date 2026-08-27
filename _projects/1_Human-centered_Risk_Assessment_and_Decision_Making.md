@@ -269,7 +269,7 @@ Compared with baseline physics-based and data-driven approaches, PIRAM improved 
 
 ## 3. Occupant injury severity prediction
 
-乘员损伤预测模型可以为碰撞前阶段的轨迹规划系统和in-crash 阶段的乘员约束系统优化提供重要参考。为了解决上述问题，我们首先构建了一个大规模正面碰撞工况数据集，重点研究车内乘员的运动学响应特性。进一步，我们建立了一个数据驱动的、基于车辆动力学参数的乘员损伤预测模型以实现准确且快速的乘员损伤严重程度评估。我们将上述问题分为两个阶段：（1）基于深度学习算法在7分类任务中实现高准确率的乘员损伤预测；（2）通过模型可视化方法提取碰撞过程中简化的动力学特征以建立一个凭借较少计算资源就能实现准确预测的near-real time 损伤预测模型。
+Occupant injury prediction models can provide important support for both pre-crash trajectory planning and in-crash occupant restraint system optimization. To this end, we first constructed a large-scale dataset of frontal crash conditions to characterize occupant kinematic responses. We then developed a data-driven occupant injury prediction model based on vehicle dynamic parameters to enable rapid and accurate assessment of injury severity. The study was conducted in two stages: (1) developing a deep learning model for accurate occupant injury prediction across seven severity classes; and (2) using model visualization to identify simplified crash-dynamic features and develop a near-real-time injury prediction model that achieves accurate prediction with substantially reduced computational cost.
 
 <div class="row justify-content-sm-center">
     <div class="col-sm-10 mt-3 mt-md-0">
