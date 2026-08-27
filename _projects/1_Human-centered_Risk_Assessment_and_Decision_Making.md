@@ -402,88 +402,67 @@ We constructed two large-scale numerical datasets with varying fidelity levels. 
 
 ---
 
-## 4. Injury-aware decision making and safety performance evaluation
+## 4. Safety performance evaluation and injury-aware decision making of autonomous vehicle
 
 
-### From collision avoidance to unified safety evaluation
 
-Vehicle safety is often assessed primarily by collision frequency or crash rate. These indicators are necessary but incomplete: they do not describe the consequences for vehicle occupants when collision avoidance fails.
+### Unified experimental framework
+Existing real-world datasets for evaluating the safety protection performance of automated vehicles differ substantially from those of conventional vehicles in terms of accumulated mileage, crash types, and other characteristics, making direct comparisons across manufacturers and levels of driving automation difficult. To address this issue, we developed a unified driving-simulator-based framework for evaluating the safety protection performance of automated vehicles. The framework integrates automated vehicle models at different levels of automation, an accelerated generation algorithm for highway safety-critical scenarios, and a data-driven occupant injury quantification model, enabling comprehensive and fair comparisons under standardized crash conditions, consistent levels of scenario urgency, and unified evaluation metrics.
 
-We therefore developed a **unified experimental framework** that evaluates automated-driving safety through both **collision occurrence and occupant injury severity** under comparable safety-critical scenarios.
+<div class="row justify-content-sm-center">
+    <div class="col-sm-10 mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/Research_1/paper_shen_2025_1.jpg" title="Highway simulated safety-critical scenarios and experimental procedure" class="img-fluid rounded z-depth-1" %} 
+    </div>
+</div>
+<div class="caption">
+    Highway simulated safety-critical scenarios and experimental procedure
+</div>
 
-The framework uses a high-fidelity driving simulator and parameterized hazard-triggering algorithms to generate three representative highway conflict types:
+The framework uses a high-fidelity driving simulator and parameterized hazard-triggering algorithms to generate three representative highway conflict types: Braking (a leading vehicle performs sudden emergency braking), Cut-in (a surrounding vehicle abruptly enters the ego vehicle's lane), and Merging (a surrounding vehicle competes for the ego vehicle's target lane during a lane change). The study finally collected 30 valid participants and 1,859 safety-critical vehicle interactions which contains 337 collisions. The unified experimental framework records the progression from normal driving through hazard triggering, decision making, driver intervention or disengagement, collision avoidance, and collision. 
 
-- **Braking:** a leading vehicle performs sudden emergency braking;
-- **Cut-in:** a surrounding vehicle abruptly enters the ego vehicle's lane; and
-- **Merging:** a surrounding vehicle competes for the ego vehicle's target lane during a lane change.
+<div class="row justify-content-sm-center">
+    <div class="col-sm-10 mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/Research_1/paper_shen_2025_4.jpg" title="Distribution of safety performance evaluation datasets across different levels of driving automation" class="img-fluid rounded z-depth-1" %} 
+    </div>
+</div>
+<div class="caption">
+    Distribution of safety performance evaluation datasets across different levels of driving automation
+</div>
 
-Vehicles representing **attentive manual driving (L0 reference), SAE Level 2, Level 3, and Level 4 automation** were evaluated under comparable road scenarios, similar urgency levels, and consistent metrics.
 
-### Experimental dataset
 
-The study collected:
+### Safety performance evaluation of autonomous vehicle
 
-- **30 valid participants**,
-- **1,859 safety-critical vehicle interactions**, and
-- **337 collisions**.
+Vehicle safety is often assessed primarily by crash rate. These indicators are necessary but incomplete: they do not describe the consequences for vehicle occupants when collision avoidance fails. We therefore developed a metric (**unified safety benefit**) that evaluates automated-driving safety through both **collision occurrence and occupant injury severity** under comparable safety-critical scenarios.
 
-The framework records the progression from normal driving through hazard triggering, decision making, driver intervention or disengagement, collision avoidance, and residual collision.
 
-### Occupant injury estimation
+Vehicles representing **attentive manual driving (L0 reference), SAE Level 2, Level 3, and Level 4 automation** were evaluated under comparable road scenarios, similar urgency levels, and consistent metrics. Under the designed safety-critical scenarios, the study reported:
 
-For each collision, occupant injury severity was estimated using a logistic-regression model derived from NASS/CDS crash data. Collision conditions were first reconstructed using a planar rigid-body momentum model to estimate vehicle delta-v. The resulting crash information was then mapped to the probability of serious occupant injury:
+| Automation level | Collision rate | Probability of severe occupant injury | Unified safety benefit
+| --- | ---: | ---: | ---: |
+| Attentive manual driving | 12.6% | 8.6% | 94.0% |
+| Level 2 | 24.3% | 11.1% | 90.0% |
+| Level 3 | 21.4% | 21.6% | 89.0% |
+| Level 4 | 14.1% | 9.2% | 95.0 |
 
-$$
-IR = P(MAIS3+).
-$$
+The results show that **a lower collision rate does not necessarily translate directly into a proportionally higher overall safety benefit**. In the experiment, Level 3 automation reduced collision occurrence relative to Level 2 but exhibited higher injury severity when collisions occurred, resulting in comparable unified safety benefits. Level 4 achieved a higher overall safety benefit primarily through a lower collision rate, while the reduction in residual-collision injury severity was more limited. Therefore, collision avoidance is necessary, but collision avoidance alone is not sufficient to characterize the safety performance of an automated vehicle.
 
-A threshold of $P(MAIS3+) \geq 0.2$ was used to identify severe-injury cases in the study.
 
-### Unified Safety Benefit
+### Injury-aware decision making of autonomous vehicle
 
-To jointly represent collision occurrence and occupant injury, the study proposed a **Safety Benefit (SB)** metric:
+The current published framework establishes the experimental and quantitative basis for injury-aware decision support. A fully closed-loop controller that directly optimizes automated-driving trajectories using predicted injury outcomes is an ongoing research direction.
 
-$$
-SB_i = 1 - \frac{P_{col,i} \times IR_i}{0.2},
-$$
 
-where $P_{col,i}$ is the collision rate and $IR_i$ is the average occupant injury risk for automation level $i$.
-
-This formulation extends safety assessment from a collision-only perspective toward an integrated measure that incorporates the consequences of residual crashes.
-
-### Main findings
-
-Under the designed safety-critical scenarios, the study reported:
-
-| Automation level | Collision rate | Probability of severe occupant injury |
-| --- | ---: | ---: |
-| Level 2 | 24.3% | 11.1% |
-| Level 3 | 21.4% | 21.6% |
-| Level 4 | 14.1% | 9.2% |
-
-The results show that **a lower collision rate does not necessarily translate directly into a proportionally higher overall safety benefit**. In the experiment, Level 3 automation reduced collision occurrence relative to Level 2 but exhibited higher injury severity when collisions occurred, resulting in comparable unified safety benefits. Level 4 achieved a higher overall safety benefit primarily through a lower collision rate, while the reduction in residual-collision injury severity was more limited.
-
-These findings motivate a broader definition of automated-driving safety:
-
-> **Collision avoidance is necessary, but collision avoidance alone is not sufficient to characterize the safety performance of an automated vehicle.**
-
-The current published framework establishes the experimental and quantitative basis for injury-aware decision support. A fully closed-loop controller that directly optimizes automated-driving trajectories using predicted injury outcomes is an ongoing research direction rather than a claim of the present study.
-
-**Research focus:** safety-critical scenarios · automated-driving safety evaluation · collision-injury integration · injury-aware decision support · integrated safety
-
-**Representative publication**  
 [Paper](https://doi.org/10.1016/j.aap.2025.108273) 
-
 ---
 
 
-## Open data & code
-
-Reproducibility and open research are integral parts of this research program. Public resources will be released progressively with standardized documentation, variable definitions, train/validation/test splits, model inputs and outputs, and minimal reproduction examples.
+## Data & code available
+Public resources will be released progressively with standardized documentation, variable definitions, train/validation/test splits, model inputs and outputs, and minimal reproduction examples.
 
 | Paper | Dataset and Code | Status |
 | --- | :---: | --- |
-| [Multisource Adaption for Driver Attention Prediction in Arbitrary Driving Scenes](https://doi.org/10.1109/TITS.2022.3177640) | Public source datasets · [Code & weights]({{ page.resources.ada_code }}) | Available |
+| [Multisource Adaption for Driver Attention Prediction in Arbitrary Driving Scenes](https://doi.org/10.1109/TITS.2022.3177640) | [Code available]({{ page.resources.ada_code }}) | Available |
 | [A physics-informed attention model for integrated driving risk assessment](https://doi.org/10.1016/j.aap.2025.108266) | {% if page.resources.piram_dataset != "" %}[Dataset]({{ page.resources.piram_dataset }}){% endif %}{% if page.resources.piram_dataset != "" and page.resources.piram_code != "" %} · {% endif %}{% if page.resources.piram_code != "" %}[Code]({{ page.resources.piram_code }}){% endif %}{% if page.resources.piram_dataset == "" and page.resources.piram_code == "" %}Coming soon{% endif %} | Preparing release |
 | [A data-driven, kinematic feature-based, near real-time algorithm for injury severity prediction of vehicle occupants](https://doi.org/10.1016/j.aap.2021.106149) | [Vehicle-crash database]({{ page.resources.vehicle_crash_database }}) | Available |
 | [A knowledge-guided multi-fidelity residual learning framework for occupant injury prediction from crash simulations](https://doi.org/10.1016/j.aei.2026.105117) | {% if page.resources.mfpgrnet_dataset != "" %}[Dataset]({{ page.resources.mfpgrnet_dataset }}){% endif %}{% if page.resources.mfpgrnet_dataset != "" and page.resources.mfpgrnet_code != "" %} · {% endif %}{% if page.resources.mfpgrnet_code != "" %}[Code]({{ page.resources.mfpgrnet_code }}){% endif %}{% if page.resources.mfpgrnet_dataset == "" and page.resources.mfpgrnet_code == "" %}Coming soon{% endif %} | Preparing release |
