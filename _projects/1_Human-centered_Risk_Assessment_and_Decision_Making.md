@@ -306,7 +306,7 @@ The final model achieved:
 The performance of the SVM-based prediction model was further evaluated using a 192-case real-world collision dataset. Considering the heterogeneity between the numerical database and the real-world dataset, we retrained the prediction model and adopted five-fold cross-validation to assess it comprehensively. The prediction accuracy, 
 precision, recall, and AUC were 78.7 %, 0.636, 0.787, and 0.698, respectively.
 
-#### Deep-learning prediction and interpretable feature extraction
+#### Occupant injury severity prediction algorithm
 
 The study was conducted in two stages: (1) developing a deep learning model for accurate occupant injury prediction across seven severity classes; and (2) using model visualization to identify simplified crash-dynamic features and develop a near-real-time injury prediction model that achieves accurate prediction with substantially reduced computational cost.
 
@@ -321,7 +321,7 @@ Specifically, the RNN-based model adopted a conventional encoder–decoder archi
     Optimized architectures of RNN and CNN
 </div>
 
-#### Large-scale numerical database and 
+#### Large-scale numerical and real-world crash databases
 
 The efficiency of the occupant injury prediction algorithm depends largely on the quality of the database, which is used for training and validation. A large-scale numerical database containing **28,000 frontal collision cases** was constructed by combining finite-element, multi-body, and lumped-parameter simulation models. The database covers occupant kinetics and injury responses with variations in vehicle crash pulse, occupant gender, and restraint configuration. Vehicle crash pulses with delta-v ranging from 40 km/h to 60 km/h with an interval of 10 km/h, and impact angles ranging from -20◦ to 10◦ with an interval of 10◦ were obtained from FE simulations.
 
@@ -337,7 +337,7 @@ The efficiency of the occupant injury prediction algorithm depends largely on th
 We also constructed a small-sized dataset of real-world MVCs to further validate the developed injury prediction model’s performance by screening vehicle crash cases from the National Automotive Sampling System/Crashworthiness Data System (NASS/CDS).  We then excluded crash cases with multiple impacts or with vehicle body types differing from the sedan model used in the numerical database, such as pickup, utility, and van. Finally, the validation dataset contained **192 frontal collision cases** with occupant injury AIS levels for the head, neck, and chest ranging from 0 to 6. Both the numerical training database and the real-world validation dataset are available.
 
 
-[Paper](https://doi.org/10.1016/j.aap.2021.106149) · [Available: vehicle-crash database]({{ page.resources.vehicle_crash_database }})
+[Paper](https://doi.org/10.1016/j.aap.2021.106149) · [vehicle-crash database]({{ page.resources.vehicle_crash_database }})
 
 ---
 
@@ -345,9 +345,7 @@ We also constructed a small-sized dataset of real-world MVCs to further validate
 
 High-fidelity finite-element crash simulations provide detailed biomechanical information, but their computational cost makes it difficult to generate sufficiently large datasets, particularly during early-stage vehicle development. Low-fidelity multi-body simulations are substantially cheaper but contain systematic bias because they simplify tissue deformation, contact mechanics, and local anatomical responses.
 
-To exploit the complementary strengths of both fidelity levels, we developed **MF-PGRNet**, a knowledge-guided multi-fidelity residual learning framework for occupant injury prediction under limited high-fidelity supervision.
-
-Rather than treating low-fidelity simulations simply as additional training samples, the framework uses them as a source of **structured physics priors**. The high-fidelity prediction task is decomposed into:
+To exploit the complementary strengths of both fidelity levels, we further developed **MF-PGRNet**, a knowledge-guided multi-fidelity residual learning framework for occupant injury prediction under limited high-fidelity supervision. Rather than treating low-fidelity simulations simply as additional training samples, the framework uses them as a source of **structured physics priors**. The high-fidelity prediction task is decomposed into:
 
 $$
 y_{HF}
@@ -357,32 +355,42 @@ $$
 
 where the first term represents a transferable physical trend learned from abundant low-fidelity simulations, and the second term corrects the fidelity-specific biomechanical gap using sparse high-fidelity observations.
 
-### Core methodological components
+Under limited high-fidelity supervision, MF-PGRNet reduced prediction errors by **more than 16%** relative to representative baselines and achieved performance comparable to models trained with substantially more high-fidelity data. The results show that cross-fidelity physics knowledge can reduce reliance on expensive finite-element simulations while maintaining useful injury-prediction performance for virtual safety assessment.
+
+<div class="row justify-content-sm-center">
+    <div class="col-sm-10 mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/Research_1/paper_lu_2026_1.png" title="Evaluation of models with different training set sizes" class="img-fluid rounded z-depth-1" %} 
+    </div>
+</div>
+<div class="caption">
+    Evaluation of models with different training set sizes
+</div>
+
+### Core modules of the proposed framework
+
+<div class="row justify-content-sm-center">
+    <div class="col-sm-10 mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/Research_1/paper_lu_2026.png" title="Training framework of the proposed MF-PGRNet for occupant injury prediction" class="img-fluid rounded z-depth-1" %} 
+    </div>
+</div>
+<div class="caption">
+    Training framework of the proposed MF-PGRNet for occupant injury prediction
+</div>
 
 - **Shared multi-modal encoding** for bi-axial crash pulses, restraint parameters, and occupant characteristics.
-- **Learnable physics prototype library** that represents characteristic patterns in the low-fidelity crash-response manifold.
-- **Prototype cross-attention** that retrieves query-relevant low-fidelity priors for an individual high-fidelity sample without requiring paired LF-HF cases.
-- **Physics-prior guided residual learning** that separates transferable physical trends from fidelity-specific numerical bias.
-- **Adaptive gated fusion** that controls how strongly the model relies on retrieved priors when LF-HF discrepancies vary.
-- **Relational knowledge distillation** that preserves useful topological structure across fidelity domains and improves learning under sparse high-fidelity data.
+- **Knowledge representation and retrieval via learnable prototype library** to capture representative physical patterns from low-fidelity (LF) simulations, combined with prototype cross-attention to dynamically retrieve relevant physics priors for each high-fidelity (HF) query.
+- **Physics-prior guided residual learning** that explicitly decomposes injury prediction into two subtasks: trend estimation and residual correction.
+- **Loss function design** for joint optimization of predictive accuracy and geometric alignment.
+
 
 ### Multi-fidelity crash datasets
 
-The framework was evaluated using:
+We constructed two large-scale numerical datasets with varying fidelity levels. Although both datasets span the same input parameter space, they differ significantly in model biofidelity and computational complexity. The simulations include crash configuration parameters, restraint-system variables, occupant characteristics and posture, crash-pulse histories, and injury metrics such as HIC, Nij, and maximum chest deflection.
+- **Low-fidelity cases** generated through vehicle crash-pulse simulation and multi-body occupant dynamics; and
+- **High-fidelity finite-element cases** with each high-fidelity simulation requiring approximately **45 h on 24 CPU cores** on average.
 
-- **4,849 low-fidelity cases**, generated through vehicle crash-pulse simulation and multi-body occupant dynamics; and
-- **3,598 high-fidelity finite-element cases**, with each high-fidelity simulation requiring approximately **45 h on 24 CPU cores** on average.
 
-The simulations include crash configuration parameters, restraint-system variables, occupant characteristics and posture, crash-pulse histories, and injury metrics such as **HIC, Nij, and maximum chest deflection**.
-
-Under limited high-fidelity supervision, MF-PGRNet reduced prediction errors by **more than 16%** relative to representative baselines and achieved performance comparable to models trained with substantially more high-fidelity data. The results show that cross-fidelity physics knowledge can reduce reliance on expensive finite-element simulations while maintaining useful injury-prediction performance for virtual safety assessment.
-
-**Research focus:** multi-fidelity learning · physics-prior learning · occupant injury prediction · virtual safety assessment · data-efficient occupant protection
-
-**Representative publication**  
-T. Lu et al., *A knowledge-guided multi-fidelity residual learning framework for occupant injury prediction from crash simulations*, Advanced Engineering Informatics, 2026.  
 [Paper](https://doi.org/10.1016/j.aei.2026.105117)
-
 {% if page.resources.mfpgrnet_dataset != "" or page.resources.mfpgrnet_code != "" %}
 **Open resources:**
 {% if page.resources.mfpgrnet_dataset != "" %}[Dataset]({{ page.resources.mfpgrnet_dataset }}){% endif %}
