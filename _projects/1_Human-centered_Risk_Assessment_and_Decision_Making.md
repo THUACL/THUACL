@@ -402,7 +402,8 @@ We constructed two large-scale numerical datasets with varying fidelity levels. 
 
 ---
 
-## 4. Injury-aware decision making in safety-critical scenario
+## 4. Injury-aware decision making and safety performance evaluation
+
 
 ### From collision avoidance to unified safety evaluation
 
@@ -471,45 +472,9 @@ The current published framework establishes the experimental and quantitative ba
 **Research focus:** safety-critical scenarios · automated-driving safety evaluation · collision-injury integration · injury-aware decision support · integrated safety
 
 **Representative publication**  
-J. Shen et al., *A unified experimental framework for estimating collision rates and occupant injury severity across different levels of driving automation*, Accident Analysis & Prevention, 2025.  
-[Paper](https://doi.org/10.1016/j.aap.2025.108273)
-
-{% if page.resources.unified_safety_dataset != "" or page.resources.unified_safety_code != "" %}
-**Open resources:**
-{% if page.resources.unified_safety_dataset != "" %}[Dataset]({{ page.resources.unified_safety_dataset }}){% endif %}
-{% if page.resources.unified_safety_dataset != "" and page.resources.unified_safety_code != "" %} · {% endif %}
-{% if page.resources.unified_safety_code != "" %}[Evaluation code]({{ page.resources.unified_safety_code }}){% endif %}
-{% else %}
-**Open resources:** `Experimental dataset · coming soon` · `Evaluation code · coming soon`
-{% endif %}
+[Paper](https://doi.org/10.1016/j.aap.2025.108273) 
 
 ---
-
-## From pre-crash risk to in-crash injury
-
-Together, these studies form a continuous research chain across perception, prediction, biomechanics, and safety evaluation:
-
-| Research stage | Main question | Representative method |
-| --- | --- | --- |
-| **Human risk perception** | Which elements in a complex traffic scene are behaviorally relevant to human drivers? | Adaptive Driver Attention (ADA) |
-| **Driving risk assessment** | How likely is a collision, how severe may it be, and how does the risk evolve over time? | PIRAM + IDRPD |
-| **Near-real-time injury prediction** | If a collision occurs, what injury may the occupant sustain and can it be predicted fast enough for onboard use? | Kinematic feature-based injury prediction |
-| **High-fidelity injury prediction** | How can reliable injury models be trained when high-fidelity crash simulations are scarce and expensive? | MF-PGRNet |
-| **Unified safety evaluation** | How should vehicle safety be evaluated when both collision occurrence and occupant injury matter? | Collision rate + injury risk + Safety Benefit |
-| **Injury-aware decision support** | How can predicted pre-crash risk and in-crash injury consequences jointly inform safer automated-driving actions? | Ongoing integrated decision framework |
-
-The long-term objective is to establish a quantitative link between candidate vehicle actions and their expected human consequences:
-
-$$
-a
-\rightarrow P(\mathrm{collision}\mid a)
-\rightarrow C_{crash}(a)
-\rightarrow P(\mathrm{injury}\mid C_{crash}, a),
-$$
-
-where $a$ denotes a candidate evasive or protective action and $C_{crash}$ denotes the resulting collision condition if avoidance is unsuccessful.
-
-This formulation provides a basis for selecting actions that consider not only **whether a collision can be avoided**, but also **how severe the resulting human injury may be when complete avoidance is infeasible**.
 
 
 ## Open data & code
