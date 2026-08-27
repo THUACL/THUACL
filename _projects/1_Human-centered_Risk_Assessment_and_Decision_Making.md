@@ -269,7 +269,13 @@ Compared with baseline physics-based and data-driven approaches, PIRAM improved 
 
 ## 3. Occupant injury severity prediction
 
-Occupant injury prediction models can provide important support for both pre-crash trajectory planning and in-crash occupant restraint system optimization. To this end, we first constructed a large-scale dataset of frontal crash conditions to characterize occupant kinematic responses. We then developed a data-driven occupant injury prediction model based on vehicle dynamic parameters to enable rapid and accurate assessment of injury severity. The study was conducted in two stages: (1) developing a deep learning model for accurate occupant injury prediction across seven severity classes; and (2) using model visualization to identify simplified crash-dynamic features and develop a near-real-time injury prediction model that achieves accurate prediction with substantially reduced computational cost.
+(待修改)
+Occupant injury prediction models can provide important support for both pre-crash trajectory planning and in-crash occupant restraint system optimization. To this end, we first constructed a large-scale dataset of frontal crash conditions to characterize occupant kinematic responses. We then developed a data-driven occupant injury prediction model based on vehicle dynamic parameters to enable rapid and accurate assessment of injury severity. 
+
+
+### 3.1 Near-real-time occupant injury severity prediction
+
+The study first used sequence models to learn the nonlinear relationship between vehicle crash pulses and occupant kinematic responses. A convolutional neural network achieved high prediction performance but remained too computationally expensive for time-critical onboard applications. To reduce model complexity, network visualization was used to examine how the high-accuracy model processed crash-pulse information. A two-layer pooling procedure then compressed the original **120-dimensional crash pulse into three kinematic features**. These features were combined with occupant and restraint information in a lightweight machine-learning model. 
 
 <div class="row justify-content-sm-center">
     <div class="col-sm-10 mt-3 mt-md-0">
@@ -280,43 +286,46 @@ Occupant injury prediction models can provide important support for both pre-cra
     Technical framework of near real-time occupant injury prediction
 </div>
 
-
-### 3.1 Near-real-time occupant injury severity prediction
-
-We developed a data-driven framework for predicting occupant injury severity from vehicle crash information in near real time.
-
-A large-scale numerical database containing **28,000 frontal collision cases** was constructed by combining finite-element, multi-body, and lumped-parameter simulation models. The database covers variations in:
-
-- vehicle crash pulse,
-- occupant gender,
-- seatbelt use,
-- airbag use,
-- head acceleration,
-- chest displacement,
-- neck force, and
-- neck moment.
-
-The resulting occupant kinematic responses were converted to body-region-specific injury severity using established injury criteria and the Abbreviated Injury Scale (AIS).
-
-#### Deep-learning prediction and interpretable feature extraction
-
-The study first used sequence models to learn the nonlinear relationship between vehicle crash pulses and occupant kinematic responses. A convolutional neural network achieved high prediction performance but remained too computationally expensive for time-critical onboard applications.
-
-To reduce model complexity, network visualization was used to examine how the high-accuracy model processed crash-pulse information. A two-layer pooling procedure then compressed the original **120-dimensional crash pulse into three kinematic features**. These features were combined with occupant and restraint information in a lightweight machine-learning model.
-
 The final model achieved:
-
 - **85.4% accuracy** for head injury severity on the numerical dataset,
 - **78.7% accuracy** on an independent **192-case real-world crash dataset**, and
 - approximately **1.2 ± 0.4 ms** prediction time.
 
-This work demonstrates that biomechanically relevant crash information can be condensed into low-dimensional kinematic features while retaining useful injury-prediction capability, making the model suitable as a decision reference for **pre-crash trajectory planning and adaptive restraint control**.
+<div class="row justify-content-sm-center">
+    <div class="col-sm-10 mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/Research_1/paper_wang_2021_3.png" title="Randomly selected examples of normalized head acceleration prediction." class="img-fluid rounded z-depth-1" %} 
+    </div>
+</div>
+<div class="caption">
+    Randomly selected examples of normalized head acceleration prediction.
+</div>
 
-**Research focus:** occupant injury biomechanics · near-real-time prediction · interpretable feature extraction · onboard safety decision support
+The performance of the SVM-based prediction model was further evaluated using a 192-case real-world collision dataset. Considering the heterogeneity between the numerical database and the real-world dataset, we retrained the prediction model and adopted five-fold cross-validation to assess it comprehensively. The prediction accuracy, 
+precision, recall, and AUC were 78.7 %, 0.636, 0.787, and 0.698, respectively.
 
-**Representative publication**  
-Q. Wang et al., *A data-driven, kinematic feature-based, near real-time algorithm for injury severity prediction of vehicle occupants*, Accident Analysis & Prevention, 2021.  
-[Paper](https://doi.org/10.1016/j.aap.2021.106149) · [Public vehicle-crash database]({{ page.resources.vehicle_crash_database }})
+#### Deep-learning prediction and interpretable feature extraction
+
+The study was conducted in two stages: (1) developing a deep learning model for accurate occupant injury prediction across seven severity classes; and (2) using model visualization to identify simplified crash-dynamic features and develop a near-real-time injury prediction model that achieves accurate prediction with substantially reduced computational cost.
+
+Specifically, the RNN-based model adopted a conventional encoder–decoder architecture with long short-term memory (LSTM) units, whereas the CNN-based model employed a temporal convolutional network (TCN) with causal and dilated convolutions to capture temporal dependencies using only past information. The models took vehicle crash pulses, occupant gender, and seatbelt and airbag use as inputs and predicted occupant kinematic and biomechanical responses, including head acceleration, chest displacement, neck force, and neck moment, which were subsequently converted into AIS injury levels. All input variables were embedded into high-dimensional representations through lookup tables before being fed into the hidden layers. Both models were trained using the adaptive moment estimation (Adam) optimizer with learning-rate decay. To reduce overfitting, we applied L2 regularization, dropout in the input and intermediate layers, and early stopping when the validation loss increased for five consecutive epochs. Hyperparameters for both models were selected using grid search.
+
+<div class="row justify-content-sm-center">
+    <div class="col-sm-10 mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/Research_1/paper_wang_2021.png" title="Optimized architectures of RNN and CNN" class="img-fluid rounded z-depth-1" %} 
+    </div>
+</div>
+<div class="caption">
+    Optimized architectures of RNN and CNN
+</div>
+
+#### Large-scale numerical database and 
+
+The efficiency of the occupant injury prediction algorithm depends largely on the quality of the database, which is used for training and validation. A large-scale numerical database containing **28,000 frontal collision cases** was constructed by combining finite-element, multi-body, and lumped-parameter simulation models. The database covers occupant kinetics and injury responses with variations in vehicle crash pulse, occupant gender, and restraint configuration. Vehicle crash pulses with delta-v ranging from 40 km/h to 60 km/h with an interval of 10 km/h, and impact angles ranging from -20◦ to 10◦ with an interval of 10◦ were obtained from FE simulations.
+
+We also constructed a small-sized dataset of real-world MVCs to further validate the developed injury prediction model’s performance by screening vehicle crash cases from the National Automotive Sampling System/Crashworthiness Data System (NASS/CDS).  We then excluded crash cases with multiple impacts or with vehicle body types differing from the sedan model used in the numerical database, such as pickup, utility, and van. Finally, **the validation dataset contained 192 frontal collision cases with occupant injury AIS levels for the head, neck, and chest ranging from 0 to 6**. Both the numerical training database and the real-world validation dataset are available.
+
+
+[Paper](https://doi.org/10.1016/j.aap.2021.106149) · [Available: vehicle-crash database]({{ page.resources.vehicle_crash_database }})
 
 ---
 
