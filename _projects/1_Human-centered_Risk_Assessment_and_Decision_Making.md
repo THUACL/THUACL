@@ -269,8 +269,11 @@ Compared with baseline physics-based and data-driven approaches, PIRAM improved 
 
 ## 3. Occupant injury severity prediction
 
-(待修改)
-Occupant injury prediction models can provide important support for both pre-crash trajectory planning and in-crash occupant restraint system optimization. To this end, we first constructed a large-scale dataset of frontal crash conditions to characterize occupant kinematic responses. We then developed a data-driven occupant injury prediction model based on vehicle dynamic parameters to enable rapid and accurate assessment of injury severity. 
+Accurate prediction of occupant injury severity is an important component of integrated vehicle safety, providing quantitative injury information for both pre-crash trajectory planning and in-crash occupant protection. However, occupant injury is governed by complex interactions among vehicle crash dynamics, occupant characteristics, and restraint conditions, making rapid and reliable injury assessment challenging. To address this problem, our research has progressively developed from large-scale simulation-based injury modeling to multi-fidelity learning that combines heterogeneous crash data with different levels of biomechanical fidelity.
+
+We first established a large-scale numerical crash database covering diverse frontal impact conditions, with a particular focus on occupant kinematic and biomechanical responses. Deep learning architectures were initially employed to learn the nonlinear relationship between crash dynamics and occupant injury outcomes. To support near-real-time applications, we subsequently extracted compact and physically interpretable kinematic features from vehicle crash pulses and combined them with low-complexity machine-learning models. This substantially reduced computational cost while maintaining reliable injury prediction performance.
+
+Building on this simulation-based framework, our subsequent work addressed a major limitation of occupant injury modeling: the scarcity and computational cost of high-fidelity crash data. High-fidelity simulations provide more realistic representations of human injury mechanisms but are expensive to generate at scale, whereas low-fidelity simulations are more accessible but contain systematic modeling biases. To exploit the complementary strengths of these data sources, we developed a knowledge-guided multi-fidelity learning framework that transfers structured physical knowledge from abundant low-fidelity simulations to sparse high-fidelity injury data. The framework retrieves relevant low-fidelity prototypes for each high-fidelity case and decomposes injury prediction into a transferable low-fidelity trend component and a high-fidelity residual correction. This approach improves sample efficiency and prediction accuracy under limited high-fidelity supervision, providing a more scalable basis for virtual safety assessment, occupant protection design, and injury-aware vehicle decision-making.
 
 
 ### 3.1 Near-real-time occupant injury severity prediction
@@ -322,7 +325,16 @@ Specifically, the RNN-based model adopted a conventional encoder–decoder archi
 
 The efficiency of the occupant injury prediction algorithm depends largely on the quality of the database, which is used for training and validation. A large-scale numerical database containing **28,000 frontal collision cases** was constructed by combining finite-element, multi-body, and lumped-parameter simulation models. The database covers occupant kinetics and injury responses with variations in vehicle crash pulse, occupant gender, and restraint configuration. Vehicle crash pulses with delta-v ranging from 40 km/h to 60 km/h with an interval of 10 km/h, and impact angles ranging from -20◦ to 10◦ with an interval of 10◦ were obtained from FE simulations.
 
-We also constructed a small-sized dataset of real-world MVCs to further validate the developed injury prediction model’s performance by screening vehicle crash cases from the National Automotive Sampling System/Crashworthiness Data System (NASS/CDS).  We then excluded crash cases with multiple impacts or with vehicle body types differing from the sedan model used in the numerical database, such as pickup, utility, and van. Finally, **the validation dataset contained 192 frontal collision cases with occupant injury AIS levels for the head, neck, and chest ranging from 0 to 6**. Both the numerical training database and the real-world validation dataset are available.
+<div class="row justify-content-sm-center">
+    <div class="col-sm-10 mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/Research_1/paper_wang_2021_2.png" title="Ratios of cases with different AIS levels in the numerical database" class="img-fluid rounded z-depth-1" %} 
+    </div>
+</div>
+<div class="caption">
+    Ratios of cases with different AIS levels in the numerical database
+</div>
+
+We also constructed a small-sized dataset of real-world MVCs to further validate the developed injury prediction model’s performance by screening vehicle crash cases from the National Automotive Sampling System/Crashworthiness Data System (NASS/CDS).  We then excluded crash cases with multiple impacts or with vehicle body types differing from the sedan model used in the numerical database, such as pickup, utility, and van. Finally, the validation dataset contained **192 frontal collision cases** with occupant injury AIS levels for the head, neck, and chest ranging from 0 to 6. Both the numerical training database and the real-world validation dataset are available.
 
 
 [Paper](https://doi.org/10.1016/j.aap.2021.106149) · [Available: vehicle-crash database]({{ page.resources.vehicle_crash_database }})
