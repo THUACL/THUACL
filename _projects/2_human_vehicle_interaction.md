@@ -4,8 +4,7 @@ title: Human–vehicle interaction
 description: Human-centered interaction and collaborative decision making
 img: assets/img/Research_2/research_hvi.jpg
 importance: 2
-category: research
-hidden: true
+category: other
 ---
 
 Our research investigates how drivers understand, interact with, and collaborate with intelligent vehicles under both normal and safety-critical driving conditions.
