@@ -13,9 +13,8 @@ resources:
   ada_code: "https://github.com/ShunGan/ADA"
   vehicle_crash_database: "https://github.com/wangqf1997/Vehicle-Crash-Database"
   piram_code: ""
-  piram_dataset: ""
   mfpgrnet_code: ""
-  mfpgrnet_dataset: ""
+  unified_experimental_dataset: ""
 ---
 
 > **Research objective.** We develop human-centered methods that integrate **risk perception, physics-informed risk assessment, occupant injury severity prediction, and injury-aware decision making**, bridging pre-crash collision avoidance with in-crash injury mitigation to support safer and more integrated intelligent vehicle safety systems. 
@@ -31,7 +30,7 @@ The research framework consists of four interconnected components:
 
 ## Background
 
-The rapid development of intelligent vehicles is reshaping how road safety is assessed and managed. Conventional vehicle safety research has largely treated active safety and passive safety as separate problems which becomes increasingly restrictive in safety-critical scenarios. **A comprehensive safety framework therefore requires intelligent vehicles to 像人一样 understand how the risk develops, how severe the resulting impact may be, and what consequences different outcomes may have for occupants.** Addressing this problem requires integrating human risk perception, driving risk quantification, post-crash occupant injury severity evaluation, and injury-risk-minimizing safety decision-making within a unified framework. **Our research investigates this complete pre-crash-to-injury process by combining human behavioral data, physics-informed modeling, injury biomechanics, and data-driven learning.** The objective is to establish a human-centered representation of driving risk that connects traffic-level interactions with vehicle-level collision dynamics and occupant-level injury outcomes, thereby providing a quantitative basis for safety assessment, automated-driving decision support, and the coordinated design of active and passive safety systems.
+The rapid development of intelligent vehicles is reshaping how road safety is assessed and managed. Conventional vehicle safety research has largely treated active safety and passive safety as separate problems which becomes increasingly restrictive in safety-critical scenarios. **A comprehensive safety framework therefore requires intelligent vehicles to understand, as humans do, how risk develops, how severe the resulting impact may be, and what consequences different outcomes may have for occupants.** Addressing this problem requires integrating human risk perception, driving risk quantification, post-crash occupant injury severity evaluation, and injury-risk-minimizing safety decision-making within a unified framework. **Our research investigates this complete pre-crash-to-injury process by combining human behavioral data, physics-informed modeling, injury biomechanics, and data-driven learning.** The objective is to establish a human-centered representation of driving risk that connects traffic-level interactions with vehicle-level collision dynamics and occupant-level injury outcomes, thereby providing a quantitative basis for safety assessment, automated-driving decision support, and the coordinated design of active and passive safety systems.
 
 
 <div class="row justify-content-sm-center">
@@ -451,6 +450,7 @@ The results show that **a lower collision rate does not necessarily translate di
 ### Injury-aware decision making of autonomous vehicle
 
 The current published framework establishes the experimental and quantitative basis for injury-aware decision support. A fully closed-loop controller that directly optimizes automated-driving trajectories using predicted injury outcomes is an ongoing research direction.
+
 [Paper](https://doi.org/10.1016/j.aap.2025.108273)
 
 ---
@@ -461,11 +461,16 @@ Public resources will be released progressively with standardized documentation,
 
 | Paper | Dataset and Code | Status |
 | --- | :---: | --- |
-| [Multisource Adaption for Driver Attention Prediction in Arbitrary Driving Scenes](https://doi.org/10.1109/TITS.2022.3177640) | [Code available]({{ page.resources.ada_code }}) | Available |
-| [A physics-informed attention model for integrated driving risk assessment](https://doi.org/10.1016/j.aap.2025.108266) | {% if page.resources.piram_dataset != "" %}[Dataset]({{ page.resources.piram_dataset }}){% endif %}{% if page.resources.piram_dataset != "" and page.resources.piram_code != "" %} · {% endif %}{% if page.resources.piram_code != "" %}[Code]({{ page.resources.piram_code }}){% endif %}{% if page.resources.piram_dataset == "" and page.resources.piram_code == "" %}Coming soon{% endif %} | Preparing release |
-| [A data-driven, kinematic feature-based, near real-time algorithm for injury severity prediction of vehicle occupants](https://doi.org/10.1016/j.aap.2021.106149) | [Vehicle-crash database]({{ page.resources.vehicle_crash_database }}) | Available |
-| [A knowledge-guided multi-fidelity residual learning framework for occupant injury prediction from crash simulations](https://doi.org/10.1016/j.aei.2026.105117) | {% if page.resources.mfpgrnet_dataset != "" %}[Dataset]({{ page.resources.mfpgrnet_dataset }}){% endif %}{% if page.resources.mfpgrnet_dataset != "" and page.resources.mfpgrnet_code != "" %} · {% endif %}{% if page.resources.mfpgrnet_code != "" %}[Code]({{ page.resources.mfpgrnet_code }}){% endif %}{% if page.resources.mfpgrnet_dataset == "" and page.resources.mfpgrnet_code == "" %}Coming soon{% endif %} | Preparing release |
-| [A unified experimental framework for estimating collision rates and occupant injury severity across different levels of driving automation](https://doi.org/10.1016/j.aap.2025.108273) | {% if page.resources.unified_safety_dataset != "" %}[Dataset]({{ page.resources.unified_safety_dataset }}){% endif %}{% if page.resources.unified_safety_dataset != "" and page.resources.unified_safety_code != "" %} · {% endif %}{% if page.resources.unified_safety_code != "" %}[Evaluation code]({{ page.resources.unified_safety_code }}){% endif %}{% if page.resources.unified_safety_dataset == "" and page.resources.unified_safety_code == "" %}Coming soon{% endif %} | Preparing release |
+| [Multisource Adaption for Driver Attention Prediction in Arbitrary Driving Scenes](https://doi.org/10.1109/TITS.2022.3177640) | [ADA code]({{ page.resources.ada_code }}) | Available |
+
+| [A physics-informed attention model for integrated driving risk assessment](https://doi.org/10.1016/j.aap.2025.108266) | {% if page.resources.piram_code != "" %}[PIRAM]({{ page.resources.piram_code }}){% elsif page.resources.piram_dataset != "" %}[PIRAM code]({{ page.resources.piram_dataset }}){% else %}PIRAM{% endif %} | Preparing release |
+
+| [A data-driven, kinematic feature-based, near real-time algorithm for injury severity prediction of vehicle occupants](https://doi.org/10.1016/j.aap.2021.106149) | [Vehicle-crash dataset]({{ page.resources.vehicle_crash_database }}) | Available |
+
+| [A knowledge-guided multi-fidelity residual learning framework for occupant injury prediction from crash simulations](https://doi.org/10.1016/j.aei.2026.105117) | {% if page.resources.mfpgrnet_code != "" %}[MF-PGRNet]({{ page.resources.mfpgrnet_code }}){% elsif page.resources.mfpgrnet_dataset != "" %}[MF-PGRNet]({{ page.resources.mfpgrnet_dataset }}){% else %}MF-PGRNet code{% endif %} | Preparing release |
+
+| [A unified experimental framework for estimating collision rates and occupant injury severity across different levels of driving automation](https://doi.org/10.1016/j.aap.2025.108273) | {% assign ue_ds = page.resources.unified_experimental_dataset | default: "" %}{% if ue_ds != "" %}[Dataset]({{ ue_ds }}){% else %}Dataset{% endif %} | Preparing release |
+
 
 ---
 
