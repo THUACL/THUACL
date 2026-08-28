@@ -17,6 +17,7 @@ resources:
   unified_experimental_dataset: ""
 ---
 
+
 > **Research objective.** We develop human-centered methods that integrate **risk perception, physics-informed risk assessment, occupant injury severity prediction, and injury-aware decision making**, bridging pre-crash collision avoidance with in-crash injury mitigation to support safer and more integrated intelligent vehicle safety systems. 
 
 The research framework consists of four interconnected components:
@@ -455,17 +456,19 @@ The current published framework establishes the experimental and quantitative ba
 
 ---
 
-
 ## Data & code available
 Public resources will be released progressively with standardized documentation, variable definitions, train/validation/test splits, model inputs and outputs, and minimal reproduction examples.
 
+
+
 | Paper | Dataset and Code | Status |
 | :--- | :---: | :---: |
-| [Multisource Adaption for Driver Attention Prediction in Arbitrary Driving Scenes](https://doi.org/10.1109/TITS.2022.3177640) | [ADA code]({{ page.resources.ada_code }}) | Available |
-| [A physics-informed attention model for integrated driving risk assessment](https://doi.org/10.1016/j.aap.2025.108266) | {% if page.resources.piram_code != "" %}[PIRAM code]({{ page.resources.piram_code }}){% elsif page.resources.piram_dataset != "" %}[PIRAM dataset]({{ page.resources.piram_dataset }}){% else %}PIRAM{% endif %} | Preparing release |
-| [A data-driven, kinematic feature-based, near real-time algorithm for injury severity prediction of vehicle occupants](https://doi.org/10.1016/j.aap.2021.106149) | [Vehicle-crash dataset]({{ page.resources.vehicle_crash_database }}) | Available |
-| [A knowledge-guided multi-fidelity residual learning framework for occupant injury prediction from crash simulations](https://doi.org/10.1016/j.aei.2026.105117) | {% if page.resources.mfpgrnet_code != "" %}[MF-PGRNet code]({{ page.resources.mfpgrnet_code }}){% elsif page.resources.mfpgrnet_dataset != "" %}[MF-PGRNet dataset]({{ page.resources.mfpgrnet_dataset }}){% else %}MF-PGRNet{% endif %} | Preparing release |
-| [A unified experimental framework for estimating collision rates and occupant injury severity across different levels of driving automation](https://doi.org/10.1016/j.aap.2025.108273) | {% assign ue_ds = page.resources.unified_experimental_dataset | default: "" %}{% if ue_ds != "" %}[Dataset]({{ ue_ds }}){% else %}Dataset{% endif %} | Preparing release |
+| [Multisource Adaption for Driver Attention Prediction in Arbitrary Driving Scenes](https://doi.org/10.1109/TITS.2022.3177640) | {% if page.resources.ada_code and page.resources.ada_code != "" %}[ADA code]({{ page.resources.ada_code }}){% else %}ADA code{% endif %} | {% if page.resources.ada_code and page.resources.ada_code != "" %}Available{% else %}Preparing release{% endif %} |
+| [A physics-informed attention model for integrated driving risk assessment](https://doi.org/10.1016/j.aap.2025.108266) | {% if page.resources.piram_code and page.resources.piram_code != "" %}[PIRAM code]({{ page.resources.piram_code }}){% else %}PIRAM code{% endif %} | {% if page.resources.piram_code and page.resources.piram_code != "" %}Available{% else %}Preparing release{% endif %} |
+| [A data-driven, kinematic feature-based, near real-time algorithm for injury severity prediction of vehicle occupants](https://doi.org/10.1016/j.aap.2021.106149) | {% if page.resources.vehicle_crash_database and page.resources.vehicle_crash_database != "" %}[Vehicle-crash dataset]({{ page.resources.vehicle_crash_database }}){% else %}Vehicle-crash dataset{% endif %} | {% if page.resources.vehicle_crash_database and page.resources.vehicle_crash_database != "" %}Available{% else %}Preparing release{% endif %} |
+| [A knowledge-guided multi-fidelity residual learning framework for occupant injury prediction from crash simulations](https://doi.org/10.1016/j.aei.2026.105117) | {% if page.resources.mfpgrnet_code and page.resources.mfpgrnet_code != "" %}[MF-PGRNet code]({{ page.resources.mfpgrnet_code }}){% else %}MF-PGRNet code{% endif %} | {% if page.resources.mfpgrnet_code and page.resources.mfpgrnet_code != "" %}Available{% else %}Preparing release{% endif %} |
+| [A unified experimental framework for estimating collision rates and occupant injury severity across different levels of driving automation](https://doi.org/10.1016/j.aap.2025.108273) | {% if page.resources.unified_experimental_dataset and page.resources.unified_experimental_dataset != "" %}[Dataset]({{ page.resources.unified_experimental_dataset }}){% else %}Dataset{% endif %} | {% if page.resources.unified_experimental_dataset and page.resources.unified_experimental_dataset != "" %}Available{% else %}Preparing release{% endif %} |
+
 
 
 
