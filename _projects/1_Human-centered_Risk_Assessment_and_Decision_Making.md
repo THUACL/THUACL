@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Human-centered Risk Assessment & Decision Making
-description: This page presents our group's work on full-process risk quantification and safety decision-making in hazardous scenarios, with partial datasets and code released to facilitate further research in the community.
+title: Human-centered Risk Assessment & Decision Making of Autonomous Vehicle
+description: This page presents our group's work on full-process risk quantification and safety decision-making of autonomous vehicle in hazardous scenarios, with partial datasets and code released to facilitate further research in the community.
 importance: 1
 category: research
 giscus_comments: false # 关闭评论
@@ -18,20 +18,20 @@ resources:
   mfpgrnet_dataset: ""
 ---
 
-> **Research objective.** We develop human-centered methods that integrate **risk perception, physics-informed risk assessment, occupant injury prediction, and injury-aware decision making**, bridging pre-crash collision avoidance with in-crash injury mitigation to support safer and more integrated intelligent vehicle systems. 
+> **Research objective.** We develop human-centered methods that integrate **risk perception, physics-informed risk assessment, occupant injury severity prediction, and injury-aware decision making**, bridging pre-crash collision avoidance with in-crash injury mitigation to support safer and more integrated intelligent vehicle safety systems. 
 
-This research direction is organized around four components:
+The research framework consists of four interconnected components:
 
-1. **Human-centered risk perception** — understanding what human drivers attend to and how latent hazards are perceived.
-2. **Physics-informed risk assessment** — jointly quantifying collision probability and collision severity under dynamic traffic interactions.
-3. **Occupant injury risk prediction** — predicting biomechanical consequences efficiently across different levels of model fidelity.
-4. **Injury-aware decision making** — integrating collision occurrence and occupant injury into a unified safety evaluation framework and providing the basis for injury-aware automated-driving decisions.
+1. **Human-centered risk perception** — understanding what human drivers attend to and how latent hazards are perceived. We developed an adaptive driver attention model that effectively addresses heterogeneity across multi-source datasets and can be readily generalized to arbitrary traffic scenarios through domain adaptation.
+2. **Physics-informed risk assessment** — inspired by skilled drivers who jointly consider both collision occurrence and collision severity when assessing risk, we developed a physics-informed integrated risk assessment model that jointly quantifies collision probability and collision severity during dynamic traffic interactions. The model improves the prediction accuracy of collision probability and collision severity by **7.9% and 3.2%**, respectively, while providing risk warnings an average of **0.5 s** earlier.
+3. **Occupant injury severity prediction** — enabling timely and accurate prediction of occupant biomechanical consequences from initial crash conditions and occupant characteristics, including crash pulses, impact speed, restraint system parameters, and occupant attributes, with a prediction accuracy of approximately 85%. We further developed a knowledge-guided multi-fidelity learning framework that combines the large-scale availability of low-fidelity data with the higher biomechanical fidelity of computationally expensive high-fidelity data, further improving predictive accuracy while reducing computational demands.
+4. **Safety performance evaluation and injury-aware decision making** — integrating collision occurrence and occupant injury severity within a unified experimental framework to enable consistent safety performance evaluation and provide a quantitative basis for injury-aware decision-making in safety-critical scenarios.
 
 ---
 
 ## Background
 
-The rapid development of intelligent vehicles is reshaping how road safety is assessed and managed. Conventional vehicle safety research has largely treated active safety and passive safety as separate problems which becomes increasingly restrictive in safety-critical scenarios. **A comprehensive safety framework therefore requires intelligent vehicles to understand how the risk develops, how severe the resulting impact may be, and what consequences different outcomes may have for occupants.** Addressing this problem requires linking human risk perception, vehicle interaction dynamics, collision probability and severity, and occupant biomechanics within a unified framework. **Our research investigates this complete pre-crash-to-injury process by combining human behavioral data, physics-informed modeling, driving simulation, injury biomechanics, and data-driven learning.** The objective is to establish a human-centered representation of driving risk that connects traffic-level interactions with vehicle-level collision dynamics and occupant-level injury outcomes, thereby providing a quantitative basis for safety assessment, automated-driving decision support, and the coordinated design of active and passive safety systems.
+The rapid development of intelligent vehicles is reshaping how road safety is assessed and managed. Conventional vehicle safety research has largely treated active safety and passive safety as separate problems which becomes increasingly restrictive in safety-critical scenarios. **A comprehensive safety framework therefore requires intelligent vehicles to 像人一样 understand how the risk develops, how severe the resulting impact may be, and what consequences different outcomes may have for occupants.** Addressing this problem requires integrating human risk perception, driving risk quantification, post-crash occupant injury severity evaluation, and injury-risk-minimizing safety decision-making within a unified framework. **Our research investigates this complete pre-crash-to-injury process by combining human behavioral data, physics-informed modeling, injury biomechanics, and data-driven learning.** The objective is to establish a human-centered representation of driving risk that connects traffic-level interactions with vehicle-level collision dynamics and occupant-level injury outcomes, thereby providing a quantitative basis for safety assessment, automated-driving decision support, and the coordinated design of active and passive safety systems.
 
 
 <div class="row justify-content-sm-center">
@@ -451,9 +451,8 @@ The results show that **a lower collision rate does not necessarily translate di
 ### Injury-aware decision making of autonomous vehicle
 
 The current published framework establishes the experimental and quantitative basis for injury-aware decision support. A fully closed-loop controller that directly optimizes automated-driving trajectories using predicted injury outcomes is an ongoing research direction.
+[Paper](https://doi.org/10.1016/j.aap.2025.108273)
 
-
-[Paper](https://doi.org/10.1016/j.aap.2025.108273) 
 ---
 
 
