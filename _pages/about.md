@@ -40,7 +40,7 @@ Research on pedestrian behavior modeling, interaction risk assessment, safety de
 ### Intelligent vehicle safety
 Accelerated generation of hazardous scenarios, driving risk assessment, and injury-based safety decision making under safety-critical scenarios.
 
-### Driver–vehicle interaction and value alignment 
+### Human–vehicle interaction and value alignment 
 Research on driver–vehicle interaction and behavioral analysis, collaborative decision-making, human-centered adaptive decision-making, and social value alignment.
 
 ### Integrated active and passive safety
