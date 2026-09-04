@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Pedestrain safety
-description: 
+description: Updating...
 img: assets/img/Research_2/research_ped.png
 importance: 2
 category: research
