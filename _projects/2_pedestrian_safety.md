@@ -2,7 +2,7 @@
 layout: page
 title: Pedestrain safety
 description: 
-img: assets/img/Research_2/research_Ped.jpg
+img: assets/img/Research_2/research_ped.png
 importance: 2
 category: other
 ---
