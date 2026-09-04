@@ -1,4 +1,4 @@
----
+<img width="767" height="81" alt="image" src="https://github.com/user-attachments/assets/6c436668-40c6-42cb-80e3-694b2030a791" />---
 layout: about
 title: About
 permalink: /
@@ -27,21 +27,22 @@ latest_posts:
 
 ## About us
 
-The Automotive Crash Laboratory conducts interdisciplinary research on vehicle safety, with a focus on understanding, evaluating, and mitigating injury risks across the full crash process. Its research spans injury biomechanics, pedestrian safety, intelligent vehicle safety, driver–vehicle interaction and value alignment, and integrated active and passive safety.
+The Intelligent Safety Laboratory conducts interdisciplinary research on human-centered vehicle safety, spanning human–vehicle interaction, risk and injury assessment, safety-critical decision making, and AI-driven integrated injury prevention.
 
 ## Research areas
 
-### Injury biomechanics
-Occupant and vulnerable road user injury mechanisms, injury risk prediction, and adaptive protection strategies.
+### 1. Human–vehicle Interaction and Safety
+1.1 Human–automation interaction
+1.2 Pedestrian behavior and pedestrian–vehicle interaction
+1.3 Road user modeling with realistic dynamic behaviors
+1.4 Injury biomechanics
 
-### Pedestrian safety
-Research on pedestrian behavior modeling, interaction risk assessment, safety decisions, and virtual safety evaluation.
+### 2. Human-centered Risk Assessment & Decision Making
+2.1 Physics-informed risk assessment
+2.2 Injury risk prediction
+2.3 Safety-critical decision
 
-### Intelligent vehicle safety
-Accelerated generation of hazardous scenarios, driving risk assessment, and injury-based safety decision making under safety-critical scenarios.
-
-### Human–vehicle interaction and value alignment 
-Research on driver–vehicle interaction and behavioral analysis, collaborative decision-making, human-centered adaptive decision-making, and social value alignment.
-
-### Integrated active and passive safety
-Integration of pre-crash collision risk mitigation, crash protection, injury-aware vehicle decision-making, and restraint system optimization.
+### 3. AI-driven Integrated Safety & Injury Prevention
+3.1 Risk perception and trajectory prediction
+3.2 Active/Passive safety integration
+3.3 Virtual testing
