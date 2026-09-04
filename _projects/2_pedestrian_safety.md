@@ -4,7 +4,7 @@ title: Pedestrain safety
 description: 
 img: assets/img/Research_2/research_ped.png
 importance: 2
-category: other
+category: research
 ---
 
 Updating…
