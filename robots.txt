@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://thuintelligentsafetylab.github.io/thuintelligentsafetylab/sitemap.xml
+Sitemap: https://thuintelligentsafetylab.github.io/sitemap.xml
