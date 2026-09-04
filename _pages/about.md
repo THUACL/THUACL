@@ -32,17 +32,17 @@ The Intelligent Safety Laboratory conducts interdisciplinary research on human-c
 ## Research areas
 
 ### 1. Human–vehicle Interaction and Safety
-1.1 Human–automation interaction
-1.2 Pedestrian behavior and pedestrian–vehicle interaction
-1.3 Road user modeling with realistic dynamic behaviors
-1.4 Injury biomechanics
+1.1 Human–automation interaction  
+1.2 Pedestrian behavior and pedestrian–vehicle interaction  
+1.3 Road user modeling with realistic dynamic behaviors  
+1.4 Injury biomechanics  
 
 ### 2. Human-centered Risk Assessment & Decision Making
-2.1 Physics-informed risk assessment
-2.2 Injury risk prediction
-2.3 Safety-critical decision
+2.1 Physics-informed risk assessment  
+2.2 Injury risk prediction  
+2.3 Safety-critical decision  
 
 ### 3. AI-driven Integrated Safety & Injury Prevention
-3.1 Risk perception and trajectory prediction
-3.2 Active/Passive safety integration
-3.3 Virtual testing
+3.1 Risk perception and trajectory prediction  
+3.2 Active/Passive safety integration  
+3.3 Virtual testing  
