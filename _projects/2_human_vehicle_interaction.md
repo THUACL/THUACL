@@ -1,20 +1,17 @@
 ---
 layout: page
-title: Human–vehicle interaction
-description: Human-centered interaction and collaborative decision making
-img: assets/img/Research_2/research_hvi.jpg
+title: Pedestrain safety
+description: 
+img: assets/img/Research_2/research_Ped.jpg
 importance: 2
 category: other
 ---
 
-Our research investigates how drivers understand, interact with, and collaborate with intelligent vehicles under both normal and safety-critical driving conditions.
+Updating…
 
 ### Research topics
 
-- Human–AI collaborative decision making
-- Driver takeover and intervention
-- Trust and reliance on automated driving
-- Human-centered adaptive safety
+
 
 {% comment %}
 <div class="row">
