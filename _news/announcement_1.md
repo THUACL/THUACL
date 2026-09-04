@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-The ACL website has been established!
+The Intelligent Safety Lab (THU) website has been established
