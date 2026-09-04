@@ -1,4 +1,3 @@
-<img width="767" height="81" alt="image" src="https://github.com/user-attachments/assets/6c436668-40c6-42cb-80e3-694b2030a791" />---
 layout: about
 title: About
 permalink: /
@@ -15,7 +14,7 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: false # includes social icons at the bottom of the page
 
 announcements:
-  enabled: false # includes a list of news items
+  enabled: true # includes a list of news items
   scrollable: true # adds a vertical scroll bar if there are more than 3 news items
   limit: 5 # leave blank to include all the news in the `_news` folder
 
