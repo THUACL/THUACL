@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://thuacl.github.io/THUACL/sitemap.xml
+Sitemap: https://thuacl.github.io/THUIntelligentSafetyLab/sitemap.xml
