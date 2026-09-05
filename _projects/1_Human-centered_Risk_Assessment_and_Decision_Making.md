@@ -26,15 +26,12 @@ The research framework consists of four interconnected components:
 2. **Occupant injury severity prediction** — enabling timely and accurate prediction of occupant biomechanical consequences from initial crash conditions and occupant characteristics, including crash pulses, impact speed, restraint system parameters, and occupant attributes, with a prediction accuracy of approximately 85%. 
 3. **Safety performance evaluation and injury-aware decision making** — integrating collision occurrence and occupant injury severity within a unified experimental framework to enable consistent safety performance evaluation and provide a quantitative basis for injury-aware decision-making in safety-critical scenarios.
 
-## Relevant paper
 
 | Paper | Data & Code | Status |
 | :--- | :---: | :---: |
 | [**Gan, S., et al.** (2022). Multisource Adaption for Driver Attention Prediction in Arbitrary Driving Scenes. *IEEE Transactions on Intelligent Transportation Systems, 23*(11), 20912–20925. https://doi.org/10.1109/TITS.2022.3177640](https://doi.org/10.1109/TITS.2022.3177640) | {% if page.resources.ada_code and page.resources.ada_code != "" %}[ADA code]({{ page.resources.ada_code }}){% else %}ADA code{% endif %} | {% if page.resources.ada_code and page.resources.ada_code != "" %}Available{% else %}Preparing release{% endif %} |
 | [**Wang, Q., et al.** (2021). A data-driven, kinematic feature-based, near real-time algorithm for injury severity prediction of vehicle occupants. *Accident Analysis & Prevention, 156*, 106149. https://doi.org/10.1016/j.aap.2021.106149](https://doi.org/10.1016/j.aap.2021.106149) | {% if page.resources.vehicle_crash_database and page.resources.vehicle_crash_database != "" %}[Vehicle-crash dataset]({{ page.resources.vehicle_crash_database }}){% else %}Vehicle-crash dataset{% endif %} | {% if page.resources.vehicle_crash_database and page.resources.vehicle_crash_database != "" %}Available{% else %}Preparing release{% endif %} |
 | [**Shen, J., et al.** (2025). A unified experimental framework for estimating collision rates and occupant injury severity across different levels of driving automation. *Accident Analysis & Prevention, 223*, 108273. https://doi.org/10.1016/j.aap.2025.108273](https://doi.org/10.1016/j.aap.2025.108273) | {% if page.resources.unified_experimental_dataset and page.resources.unified_experimental_dataset != "" %}[Dataset]({{ page.resources.unified_experimental_dataset }}){% else %}Dataset{% endif %} | {% if page.resources.unified_experimental_dataset and page.resources.unified_experimental_dataset != "" %}Available{% else %}Preparing release{% endif %} |
-
-Public resources will be released progressively with standardized documentation, variable definitions, train/validation/test splits, model inputs and outputs, and minimal reproduction examples.
 
 ---
 
@@ -54,9 +51,9 @@ The rapid development of intelligent vehicles is reshaping how road safety is as
 
 ---
 
-## 1. Human-centered risk perception
+## 1. [Human-centered risk perception](https://doi.org/10.1109/TITS.2022.3177640)
 
-### Adaptive driver attention prediction across heterogeneous driving scenes
+### 1.1 Adaptive driver attention prediction across heterogeneous driving scenes
 
 Human drivers do not process all visual information equally. Their attention is selectively allocated to traffic elements that are relevant to the current driving task, including interacting road users and potential hazards. Understanding this process provides an important behavioral basis for human-centered intelligent driving systems.
 
@@ -68,6 +65,8 @@ Human drivers do not process all visual information equally. Their attention is 
 <div class="caption">
     Illustration of adaptive driver attention prediction in different driving scenes collected from multiple datasets
 </div>
+
+### 1.2 Methods
 
 We developed an **Adaptive Driver Attention (ADA)** model to predict driver visual attention across heterogeneous driving environments. The model is inspired by the two principal mechanisms of human visual attention:
 
@@ -94,6 +93,7 @@ The ADA framework combines generic feature encoders with scene-adaptive attentio
     Qualitative evaluation on four driver attention datasets
 </div>
 
+### 1.3 Results
 The model was jointly trained on four public driver-attention datasets — **BDD-A, DADA-2000, DReyeVE, and EyeTrack** — and further evaluated on **PSAD**, which was not used for joint training. The results show that the model can generalize across heterogeneous traffic scenes and reproduce characteristic human attention patterns in cruising, turning, conflict, and accident-related situations. Importantly, the predicted attention maps can shift toward **latent conflict regions and relevant interacting vehicles**, providing a basis for identifying where human drivers are likely to allocate attention before and during safety-critical events.
 
 <div style="
@@ -133,15 +133,14 @@ The model was jointly trained on four public driver-attention datasets — **BDD
   Driver gaze saliency based on model prediction
 </div>
 
-[Paper](https://doi.org/10.1109/TITS.2022.3177640) · [Code]({{ page.resources.ada_code }})
-
 ---
 
 
-## 2. Occupant injury severity prediction
+## 2. [Occupant injury severity prediction](https://doi.org/10.1016/j.aap.2021.106149)
 
 Accurate prediction of occupant injury severity is an important component of integrated vehicle safety, providing quantitative injury information for both pre-crash trajectory planning and in-crash occupant protection. However, occupant injury is governed by complex interactions among vehicle crash dynamics, occupant characteristics, and restraint conditions, making rapid and reliable injury assessment challenging. To address this problem, We first established a large-scale numerical crash database covering diverse frontal impact conditions, with a particular focus on occupant kinematic and biomechanical responses. Deep learning architectures were initially employed to learn the nonlinear relationship between crash dynamics and occupant injury outcomes. To support near-real-time applications, we subsequently extracted compact and physically interpretable kinematic features from vehicle crash pulses and combined them with low-complexity machine-learning models. This substantially reduced computational cost while maintaining reliable injury prediction performance.
 
+### 2.1 Framework 
 The study first used sequence models to learn the nonlinear relationship between vehicle crash pulses and occupant kinematic responses. A convolutional neural network achieved high prediction performance but remained too computationally expensive for time-critical onboard applications. To reduce model complexity, network visualization was used to examine how the high-accuracy model processed crash-pulse information. A two-layer pooling procedure then compressed the original **120-dimensional crash pulse into three kinematic features**. These features were combined with occupant and restraint information in a lightweight machine-learning model. 
 
 <div class="row justify-content-sm-center">
@@ -153,8 +152,8 @@ The study first used sequence models to learn the nonlinear relationship between
     Technical framework of near real-time occupant injury prediction
 </div>
 
-
-The efficiency of the occupant injury prediction algorithm depends largely on the quality of the database, which is used for training and validation. A large-scale numerical database containing **28,000 frontal collision cases** was constructed by combining finite-element, multi-body, and lumped-parameter simulation models. The database covers occupant kinetics and injury responses with variations in vehicle crash pulse, occupant gender, and restraint configuration. Vehicle crash pulses with delta-v ranging from 40 km/h to 60 km/h with an interval of 10 km/h, and impact angles ranging from -20◦ to 10◦ with an interval of 10◦ were obtained from FE simulations.
+### 2.2 Dataset
+The efficiency of the occupant injury prediction algorithm depends largely on the quality of the database, which is used for training and validation. A large-scale numerical database containing **28,000 frontal collision cases** was constructed by combining finite-element, multi-body, and lumped-parameter simulation models. The database covers occupant kinetics and injury responses with variations in vehicle crash pulse, occupant gender, and restraint configuration. Vehicle crash pulses with delta-v ranging from 40 km/h to 60 km/h with an interval of 10 km/h, and impact angles ranging from -20◦ to 10◦ with an interval of 10◦ were obtained from FE simulations.
 
 <div class="row justify-content-sm-center">
     <div class="col-sm-10 mt-3 mt-md-0">
@@ -167,6 +166,8 @@ The efficiency of the occupant injury prediction algorithm depends largely on th
 
 We also constructed a small-sized dataset of real-world MVCs to further validate the developed injury prediction model’s performance by screening vehicle crash cases from the National Automotive Sampling System/Crashworthiness Data System (NASS/CDS).  We then excluded crash cases with multiple impacts or with vehicle body types differing from the sedan model used in the numerical database, such as pickup, utility, and van. Finally, the validation dataset contained **192 frontal collision cases** with occupant injury AIS levels for the head, neck, and chest ranging from 0 to 6. Both the numerical training database and the real-world validation dataset are available.
 
+
+### 2.3 Methods
 The RNN-based injury severity prediction model adopted a conventional encoder–decoder architecture with long short-term memory (LSTM) units, whereas the CNN-based model employed a temporal convolutional network (TCN) with causal and dilated convolutions to capture temporal dependencies using only past information. The models took vehicle crash pulses, occupant gender, and seatbelt and airbag use as inputs and predicted occupant kinematic and biomechanical responses, including head acceleration, chest displacement, neck force, and neck moment, which were subsequently converted into AIS injury levels. All input variables were embedded into high-dimensional representations through lookup tables before being fed into the hidden layers. Both models were trained using the adaptive moment estimation (Adam) optimizer with learning-rate decay. To reduce overfitting, we applied L2 regularization, dropout in the input and intermediate layers, and early stopping when the validation loss increased for five consecutive epochs. Hyperparameters for both models were selected using grid search.
 
 <div class="row justify-content-sm-center">
@@ -178,6 +179,7 @@ The RNN-based injury severity prediction model adopted a conventional encoder–
     Optimized architectures of RNN and CNN
 </div>
 
+### 2.4 Results
 
 The final model achieved:
 - **85.4% accuracy** for head injury severity on the numerical dataset,
@@ -188,11 +190,8 @@ The performance of the SVM-based prediction model was further evaluated using a 
 
 
 
-[Paper](https://doi.org/10.1016/j.aap.2021.106149) · [vehicle-crash database]({{ page.resources.vehicle_crash_database }})
 
-
-
-## 3. Safety performance evaluation and injury-aware decision making of autonomous vehicle
+## 3. [Safety performance evaluation and injury-aware decision making](https://doi.org/10.1016/j.aap.2025.108273)
 
 ### 3.1 Unified experimental framework
 Existing real-world datasets for evaluating the safety protection performance of automated vehicles differ substantially from those of conventional vehicles in terms of accumulated mileage, crash types, and other characteristics, making direct comparisons across manufacturers and levels of driving automation difficult. To address this issue, we developed a unified driving-simulator-based framework for evaluating the safety protection performance of automated vehicles. The framework integrates automated vehicle models at different levels of automation, an accelerated generation algorithm for highway safety-critical scenarios, and a data-driven occupant injury quantification model, enabling comprehensive and fair comparisons under standardized crash conditions, consistent levels of scenario urgency, and unified evaluation metrics.
