@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Human-centered Risk Assessment & Decision Making of Autonomous Vehicle
-description: This page presents our group's work on full-process risk quantification and safety decision-making of autonomous vehicle in hazardous scenarios, with partial datasets and code released to facilitate further research in the community.
+description: Human-centered methods that connect driver risk perception, occupant injury severity prediction, and safety performance evaluation of autonomous vehicles, bridging pre-crash collision avoidance and in-crash injury mitigation.
 importance: 1
 category: research
 giscus_comments: false # 关闭评论
@@ -15,21 +15,25 @@ resources:
   experimental_dataset: ""
 ---
 
+<style>
+/* 页面内隐藏 description，卡片列表和 SEO meta 不受影响 */
+.post-description {
+  display: none;
+}
+</style>
 
 > **Research objective.** We develop human-centered methods that integrate **risk perception, physics-informed risk assessment, occupant injury severity prediction, and injury-aware decision making**, bridging pre-crash collision avoidance with in-crash injury mitigation to support safer and more integrated intelligent vehicle safety systems. 
-
-The research framework consists of four interconnected components:
 
 1. **Human-centered risk perception** — understanding what human drivers attend to and how latent hazards are perceived. We developed an adaptive driver attention model that effectively addresses heterogeneity across multi-source datasets and can be readily generalized to arbitrary traffic scenarios through domain adaptation.
 2. **Occupant injury severity prediction** — enabling timely and accurate prediction of occupant biomechanical consequences from initial crash conditions and occupant characteristics, including crash pulses, impact speed, restraint system parameters, and occupant attributes, with a prediction accuracy of approximately 85%. 
 3. **Safety performance evaluation and injury-aware decision making** — integrating collision occurrence and occupant injury severity within a unified experimental framework to enable consistent safety performance evaluation and provide a quantitative basis for injury-aware decision-making in safety-critical scenarios.
 
 
-| Paper | Data & Code | Status |
-| :--- | :---: | :---: |
-| [**Gan, S., et al.** (2022). Multisource Adaption for Driver Attention Prediction in Arbitrary Driving Scenes. *IEEE Transactions on Intelligent Transportation Systems, 23*(11), 20912–20925. https://doi.org/10.1109/TITS.2022.3177640](https://doi.org/10.1109/TITS.2022.3177640) | {% if page.resources.ada_code and page.resources.ada_code != "" %}[ADA code]({{ page.resources.ada_code }}){% else %}ADA code{% endif %} | {% if page.resources.ada_code and page.resources.ada_code != "" %}Available{% else %}Preparing release{% endif %} |
-| [**Wang, Q., et al.** (2021). A data-driven, kinematic feature-based, near real-time algorithm for injury severity prediction of vehicle occupants. *Accident Analysis & Prevention, 156*, 106149. https://doi.org/10.1016/j.aap.2021.106149](https://doi.org/10.1016/j.aap.2021.106149) | {% if page.resources.vehicle_crash_database and page.resources.vehicle_crash_database != "" %}[Vehicle-crash dataset]({{ page.resources.vehicle_crash_database }}){% else %}Vehicle-crash dataset{% endif %} | {% if page.resources.vehicle_crash_database and page.resources.vehicle_crash_database != "" %}Available{% else %}Preparing release{% endif %} |
-| [**Shen, J., et al.** (2025). A unified experimental framework for estimating collision rates and occupant injury severity across different levels of driving automation. *Accident Analysis & Prevention, 223*, 108273. https://doi.org/10.1016/j.aap.2025.108273](https://doi.org/10.1016/j.aap.2025.108273) | {% if page.resources.unified_experimental_dataset and page.resources.unified_experimental_dataset != "" %}[Dataset]({{ page.resources.unified_experimental_dataset }}){% else %}Dataset{% endif %} | {% if page.resources.unified_experimental_dataset and page.resources.unified_experimental_dataset != "" %}Available{% else %}Preparing release{% endif %} |
+| Paper | Data & Code |
+| :--- | :---: |
+| [**Gan, S., et al.** (2022). Multisource Adaption for Driver Attention Prediction in Arbitrary Driving Scenes. *IEEE Transactions on Intelligent Transportation Systems, 23*(11), 20912–20925. https://doi.org/10.1109/TITS.2022.3177640](https://doi.org/10.1109/TITS.2022.3177640) | {% if page.resources.ada_code and page.resources.ada_code != "" %}[ADA code]({{ page.resources.ada_code }}){% else %}ADA code{% endif %} |
+| [**Wang, Q., et al.** (2021). A data-driven, kinematic feature-based, near real-time algorithm for injury severity prediction of vehicle occupants. *Accident Analysis & Prevention, 156*, 106149. https://doi.org/10.1016/j.aap.2021.106149](https://doi.org/10.1016/j.aap.2021.106149) | {% if page.resources.vehicle_crash_database and page.resources.vehicle_crash_database != "" %}[Vehicle-crash dataset]({{ page.resources.vehicle_crash_database }}){% else %}Vehicle-crash dataset{% endif %} |
+| [**Shen, J., et al.** (2025). A unified experimental framework for estimating collision rates and occupant injury severity across different levels of driving automation. *Accident Analysis & Prevention, 223*, 108273. https://doi.org/10.1016/j.aap.2025.108273](https://doi.org/10.1016/j.aap.2025.108273) | {% if page.resources.experimental_dataset and page.resources.experimental_dataset != "" %}[Experimental dataset]({{ page.resources.experimental_dataset }}){% else %}Experimental dataset (preparing release){% endif %} |
 
 ---
 
