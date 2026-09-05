@@ -179,12 +179,8 @@ The RNN-based injury severity prediction model adopted a conventional encoder–
 
 ### 2.4 Results
 
-The final model achieved:
-- **85.4% accuracy** for head injury severity on the numerical dataset,
-- **78.7% accuracy** on an independent **192-case real-world crash dataset**, and
-- approximately **1.2 ± 0.4 ms** prediction time.
+On the numerical dataset, the final model predicted head injury severity with an accuracy of **85.4%**. To examine whether this performance transfers beyond simulation, the model was further evaluated on an independent dataset of **192 real-world collisions**. Considering the heterogeneity between the numerical database and real-world crash records, the model was retrained on this dataset and assessed using five-fold cross-validation, yielding an accuracy of **78.7%**, a precision of 0.636, a recall of 0.787, and an AUC of 0.698. The moderate decrease relative to the numerical dataset reflects the greater variability of real-world crash conditions, yet the model still recovers the dominant relationship between crash pulse, occupant characteristics, and injury outcome. Crucially, prediction requires only about **1.2 ± 0.4 ms** per case, which is several orders of magnitude faster than finite element simulation and therefore fast enough to inform occupant protection decisions within the crash itself.
 
-The performance of the SVM-based prediction model was further evaluated using a 192-case real-world collision dataset. Considering the heterogeneity between the numerical database and the real-world dataset, we retrained the prediction model and adopted five-fold cross-validation to assess it comprehensively. The prediction accuracy, precision, recall, and AUC were 78.7 %, 0.636, 0.787, and 0.698, respectively.
 
 
 
@@ -216,24 +212,24 @@ The framework uses a high-fidelity driving simulator and parameterized hazard-tr
 
 
 
-### 3.2 Safety performance evaluation of autonomous vehicle
+### 3.2 Safety performance evaluation
 
 Vehicle safety is often assessed primarily by crash rate. These indicators are necessary but incomplete: they do not describe the consequences for vehicle occupants when collision avoidance fails. We therefore developed a metric (**unified safety benefit**) that evaluates automated-driving safety through both **collision occurrence and occupant injury severity** under comparable safety-critical scenarios.
 
 
-Vehicles representing **attentive manual driving (SAE Level 0), SAE Level 2, Level 3, and Level 4 automation** were evaluated under comparable road scenarios, similar urgency levels, and consistent metrics. Under the designed safety-critical scenarios, the study reported:
+Vehicles representing **attentive manual driving (selective SAE L0), SAE L2, L3, and L4 automation** were evaluated under comparable road scenarios, similar urgency levels, and consistent metrics. Under the designed safety-critical scenarios, the study reported:
 
 | Automation level | Collision rate | Probability of severe occupant injury | Unified safety benefit
 | --- | ---: | ---: | ---: |
-| Attentive manual driving | 12.6% | 8.6% | 94.0% |
-| Level 2 | 24.3% | 11.1% | 90.0% |
-| Level 3 | 21.4% | 21.6% | 89.0% |
-| Level 4 | 14.1% | 9.2% | 95.0% |
+| selective L0 | 12.6% | 8.6% | 94.0% |
+| L2 | 24.3% | 11.1% | 90.0% |
+| L3 | 21.4% | 21.6% | 89.0% |
+| L4 | 14.1% | 9.2% | 95.0% |
 
 The results show that **a lower collision rate does not necessarily translate directly into a proportionally higher overall safety benefit**. In the experiment, Level 3 automation reduced collision occurrence relative to Level 2 but exhibited higher injury severity when collisions occurred, resulting in comparable unified safety benefits. Level 4 achieved a higher overall safety benefit primarily through a lower collision rate, while the reduction in residual-collision injury severity was more limited. Therefore, collision avoidance is necessary, but collision avoidance alone is not sufficient to characterize the safety performance of an automated vehicle.
 
 
-### 3.3 Injury-aware decision making of autonomous vehicle
+### 3.3 Injury-aware decision making
 
 The current published framework establishes the experimental and quantitative basis for injury-aware decision support. A fully closed-loop controller that directly optimizes automated-driving trajectories using predicted injury outcomes is an ongoing research direction.
 
