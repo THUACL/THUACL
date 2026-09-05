@@ -12,9 +12,7 @@ img: assets/img/Research_1/injury risk prediction.jpg
 resources:
   ada_code: "https://github.com/ShunGan/ADA"
   vehicle_crash_database: "https://github.com/wangqf1997/Vehicle-Crash-Database"
-  piram_code: ""
-  mfpgrnet_code: ""
-  unified_experimental_dataset: ""
+  experimental_dataset: ""
 ---
 
 
@@ -53,7 +51,7 @@ The rapid development of intelligent vehicles is reshaping how road safety is as
 
 ## 1. [Human-centered risk perception](https://doi.org/10.1109/TITS.2022.3177640)
 
-### 1.1 Adaptive driver attention prediction across heterogeneous driving scenes
+### 1.1 Framework
 
 Human drivers do not process all visual information equally. Their attention is selectively allocated to traffic elements that are relevant to the current driving task, including interacting road users and potential hazards. Understanding this process provides an important behavioral basis for human-centered intelligent driving systems.
 
@@ -193,7 +191,7 @@ The performance of the SVM-based prediction model was further evaluated using a 
 
 ## 3. [Safety performance evaluation and injury-aware decision making](https://doi.org/10.1016/j.aap.2025.108273)
 
-### 3.1 Unified experimental framework
+### 3.1 Experimental framework
 Existing real-world datasets for evaluating the safety protection performance of automated vehicles differ substantially from those of conventional vehicles in terms of accumulated mileage, crash types, and other characteristics, making direct comparisons across manufacturers and levels of driving automation difficult. To address this issue, we developed a unified driving-simulator-based framework for evaluating the safety protection performance of automated vehicles. The framework integrates automated vehicle models at different levels of automation, an accelerated generation algorithm for highway safety-critical scenarios, and a data-driven occupant injury quantification model, enabling comprehensive and fair comparisons under standardized crash conditions, consistent levels of scenario urgency, and unified evaluation metrics.
 
 <div class="row justify-content-sm-center">
@@ -238,11 +236,6 @@ The results show that **a lower collision rate does not necessarily translate di
 ### 3.3 Injury-aware decision making of autonomous vehicle
 
 The current published framework establishes the experimental and quantitative basis for injury-aware decision support. A fully closed-loop controller that directly optimizes automated-driving trajectories using predicted injury outcomes is an ongoing research direction.
-
-[Paper](https://doi.org/10.1016/j.aap.2025.108273)
-
----
-
 
 
 
