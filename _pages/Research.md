@@ -2,7 +2,7 @@
 layout: page
 title: Research
 permalink: /Research/
-description: Research directions of ACL.
+description: 
 nav: true
 nav_order: 1
 display_categories: [research]
